@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-secondary-fixed": "#002109",
+          "on-tertiary-fixed-variant": "#6e3900",
+          "tertiary-fixed-dim": "#ffb77d",
+          "on-secondary": "#ffffff",
+          "on-primary-fixed": "#001c37",
+          "surface-variant": "#d3e4fe",
+          "error": "#ba1a1a",
+          "on-error": "#ffffff",
+          "on-surface": "#0b1c30",
+          "primary-fixed-dim": "#afc8ed",
+          "surface-bright": "#f8f9ff",
+          "surface-container-lowest": "#ffffff",
+          "surface-container": "#e5eeff",
+          "on-primary": "#ffffff",
+          "on-surface-variant": "#43474d",
+          "tertiary": "#261000",
+          "tertiary-container": "#442100",
+          "outline": "#74777e",
+          "secondary-container": "#7cf994",
+          "secondary": "#006e2d",
+          "tertiary-fixed": "#ffdcc3",
+          "on-tertiary-container": "#da7808",
+          "on-tertiary-fixed": "#2f1500",
+          "inverse-primary": "#afc8ed",
+          "on-secondary-fixed-variant": "#005320",
+          "error-container": "#ffdad6",
+          "on-tertiary": "#ffffff",
+          "surface-container-low": "#eff4ff",
+          "secondary-fixed": "#7ffc97",
+          "on-background": "#0b1c30",
+          "surface-dim": "#cbdbf5",
+          "surface-container-highest": "#d3e4fe",
+          "surface-container-high": "#dce9ff",
+          "primary-container": "#0f2b48",
+          "on-secondary-container": "#007230",
+          "outline-variant": "#c4c6ce",
+          "on-error-container": "#93000a",
+          "inverse-surface": "#213145",
+          "on-primary-fixed-variant": "#2f4867",
+          "primary": "#00162d",
+          "inverse-on-surface": "#eaf1ff",
+          "secondary-fixed-dim": "#62df7d",
+          "surface-tint": "#476080",
+          "background": "#f8f9ff",
+          "on-primary-container": "#7a93b5",
+          "surface": "#f8f9ff",
+          "primary-fixed": "#d2e4ff"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "margin": "2rem",
+          "gutter": "1.5rem",
+          "margin-mobile": "1rem",
+          "space-xl": "2.5rem",
+          "gutter-mobile": "0.75rem",
+          "space-lg": "1.5rem",
+          "space-xs": "0.25rem",
+          "space-sm": "0.5rem",
+          "space-md": "1rem"
+        },
+        "fontFamily": {
+          "headline-md": [
+            "Inter"
+          ],
+          "headline-xl-mobile": [
+            "Inter"
+          ],
+          "headline-lg-mobile": [
+            "Inter"
+          ],
+          "headline-lg": [
+            "Inter"
+          ],
+          "headline-xl": [
+            "Inter"
+          ],
+          "body-lg": [
+            "Inter"
+          ],
+          "body-sm": [
+            "Inter"
+          ],
+          "currency-display": [
+            "Inter"
+          ],
+          "label-sm": [
+            "Inter"
+          ],
+          "headline-sm": [
+            "Inter"
+          ],
+          "body-md": [
+            "Inter"
+          ],
+          "label-md": [
+            "Inter"
+          ],
+          "label-lg": [
+            "Inter"
+          ],
+          "currency-tabular": [
+            "Inter"
+          ]
+        },
+        "fontSize": {
+          "headline-md": [
+            "20px",
+            {
+              "lineHeight": "28px",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-xl-mobile": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-lg-mobile": [
+            "22px",
+            {
+              "lineHeight": "28px",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-lg": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-xl": [
+            "36px",
+            {
+              "lineHeight": "44px",
+              "fontWeight": "700"
+            }
+          ],
+          "body-lg": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "400"
+            }
+          ],
+          "body-sm": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "fontWeight": "400"
+            }
+          ],
+          "currency-display": [
+            "32px",
+            {
+              "lineHeight": "40px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ],
+          "label-sm": [
+            "11px",
+            {
+              "lineHeight": "14px",
+              "letterSpacing": "0.04em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-sm": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "600"
+            }
+          ],
+          "body-md": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "400"
+            }
+          ],
+          "label-md": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "fontWeight": "500"
+            }
+          ],
+          "label-lg": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "500"
+            }
+          ],
+          "currency-tabular": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "500"
+            }
+          ]
+        }
+      },
+    },
+  }</script><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/></head><body class="bg-background font-body-md text-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 px-space-md flex items-center justify-between bg-surface-container-low"><div class="flex items-center gap-space-xs"><img alt="Bharat Gateway Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VWvfzN_U2Btc9LZEDi9gnHE5P8mq4Mvb39vp7KCCUkKNKyuVIHgV1S6c1HYdU8daQDU8tKEND3YYqvFiW5marnRa3Ul0_cGzPl6akyXyNroxa3sLEYB3ih5-Kfg4ZTaN7OaWegekSKEDKD-lYONiq_dLyD9y-BySfehprojt8U726695JPdG4o9NQKjib5fUeSv1rscDx46vv5t8uShcIugxDgiJ7fKRDluBUeKQ0_g6ETA2bSTNdRZN7J"/><span class="font-headline-sm text-headline-sm text-primary tracking-tight">BharatGateway</span></div><span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded-lg bg-surface-container-high text-on-surface-variant font-medium">v2.4 Self-Hosted</span></div><div class="px-space-md pt-space-md"><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline px-space-xs mb-space-xs block">Main</span><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-semibold"><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-lg">dashboard</span><span class="font-label-lg text-label-lg">Dashboard</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="payments" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-lg">payments</span><span class="font-label-lg text-label-lg">Payments</span></div><span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-surface-container text-primary font-bold">1,280</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="observers-heartbeats" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-lg">vital_signs</span><span class="font-label-lg text-label-lg">Observers / Heartbeats</span></div><span class="flex h-2 w-2 relative"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span></span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="customers" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-lg">group</span><span class="font-label-lg text-label-lg">Customers</span></div></a></nav></div><div class="px-space-md pt-space-lg"><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline px-space-xs mb-space-xs block">Configuration</span><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-semibold"><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="branding-settings" href="#"><span class="material-symbols-outlined text-lg">palette</span><span class="font-label-lg text-label-lg">Branding Settings</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="webhooks-api" href="#"><span class="material-symbols-outlined text-lg">webhook</span><span class="font-label-lg text-label-lg">Webhooks &amp; API</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="system-logs" href="#"><span class="material-symbols-outlined text-lg">terminal</span><span class="font-label-lg text-label-lg">System Logs</span></a></nav></div></div><div class="p-space-md bg-surface-container-low m-space-sm rounded-xl"><div class="flex items-center justify-between mb-space-xs"><div class="flex items-center gap-space-xs"><span class="h-2 w-2 rounded-full bg-secondary inline-block animate-pulse"></span><span class="font-label-sm text-label-sm font-semibold text-on-surface">UPI Listener Engine</span></div><span class="font-label-sm text-label-sm text-secondary font-bold">Active</span></div><div class="w-full bg-surface-container rounded-full h-1.5 mb-space-xs"><div class="bg-secondary h-1.5 rounded-full w-2/5"></div></div><div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm"><span>Mem: 248MB | CPU: 4%</span><span>v2.4.1 (Stable)</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl z-40 flex items-center justify-between px-gutter shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-md flex-1 max-w-xl"><div class="flex items-center gap-space-xs px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed"><span class="h-2 w-2 rounded-full bg-secondary inline-block"></span><span class="font-label-sm text-label-sm font-semibold">Production</span></div><div class="relative flex-1"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg">search</span><input class="w-full bg-surface-container-low text-on-surface placeholder:text-outline pl-9 pr-8 py-1.5 rounded-lg font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Quick UTR / Order ID lookup..." type="text"/><kbd class="absolute right-2.5 top-1/2 -translate-y-1/2 font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono">/</kbd></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs"><button class="flex items-center gap-space-xs px-space-sm py-1.5 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" type="button"><span class="material-symbols-outlined text-base">send</span><span>Test Webhook</span></button><button class="flex items-center gap-space-xs px-space-sm py-1.5 rounded-lg bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md transition-colors" type="button"><span class="material-symbols-outlined text-base">add</span><span>Create Payment Link</span></button></div><div class="relative flex items-center justify-center"><button class="text-on-surface-variant hover:text-on-surface transition-colors p-1.5 rounded-lg hover:bg-surface-container-low" type="button"><span class="material-symbols-outlined text-xl">notifications</span></button><span class="absolute top-1 right-1 h-2 w-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Kisan Agro Tech Pvt Ltd</span><span class="font-label-sm text-label-sm text-outline font-mono leading-tight">MID_884920</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-surface-container-high" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdx3kSektrAQovYY6vdQ9iHD_ilcYj2nD3BBPgFfKnH7xcUrvH5nk4J63QqHagj84hd2WbpbvxClocZQRUF1EKPMHH0DQiKzgLhZaDbLq_tf38ZmUkNegT5d59Y4RjlqaSm4lzNvgxnR03vxeokRN7CWvgYHgd6UDvFnb5CbL2v9DTZwa2KgaGKaz9fYSgUIqFYKxW13ADPyy0zqXvo15SvFvPUXbi3kJRFg2lRhhPUep222gIEqKaxQ"/></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Toast Notification Container (Dynamic Alert) -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-space-sm bg-primary text-on-primary px-space-md py- space-sm py-2.5 rounded-lg shadow-xl font-label-md text-label-md" id="toast-notification">
+<span class="material-symbols-outlined text-secondary-fixed text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span id="toast-message">Copied to clipboard</span>
+</div>
+<!-- Breadcrumb Bar & Header Strip -->
+<div class="px-margin pt-space-lg pb-space-md">
+<!-- Breadcrumbs -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-space-xs font-label-md text-label-md text-outline mb-space-sm">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-base">payments</span>
+<span>Payments</span>
+</a>
+<span class="text-outline-variant font-mono">/</span>
+<span class="text-on-surface font-semibold font-mono tracking-tight">ORD-98242</span>
+<span class="ml-2 font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed font-semibold flex items-center gap-1">
+<span class="h-1.5 w-1.5 rounded-full bg-secondary"></span>
+        Matched in 1.2s
+      </span>
+</nav>
+<!-- Page Title & Top Actions Row -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+            Order #ORD-98242
+          </h1>
+<button class="p-1 rounded hover:bg-surface-container transition-colors text-outline hover:text-primary" onclick="copyToClipboard('ORD-98242', 'Order ID copied!')" title="Copy Order ID">
+<span class="material-symbols-outlined text-lg">content_copy</span>
+</button>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-fixed font-label-md text-label-md font-semibold">
+<span class="h-2 w-2 rounded-full bg-secondary inline-block"></span>
+            Settled &amp; Reconciled
+          </div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono">v2.4 Auto-Daemon</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 flex items-center gap-2 flex-wrap">
+<span>Initiated on <strong class="text-on-surface font-medium">24 Oct 2024, 18:42:10 IST</strong></span>
+<span class="text-outline-variant">•</span>
+<span class="flex items-center gap-1 text-secondary font-medium">
+<span class="material-symbols-outlined text-base">bolt</span>
+            Matched via Android Daemon (Samsung M14) in 1.2s
+          </span>
+<span class="text-outline-variant">•</span>
+<span>Gateway Session: <span class="font-mono text-outline">sess_upi_89a0f4219b</span></span>
+</p>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-space-xs flex-wrap">
+<button class="flex items-center gap-space-xs px-space-md py-2 rounded-lg bg-surface-container-low text-primary hover:bg-surface-container font-label-md text-label-md transition-colors shadow-sm" id="redriveBtn" onclick="triggerRedrive()">
+<span class="material-symbols-outlined text-lg text-secondary">refresh</span>
+<span>Re-send Webhook</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-2 rounded-lg bg-surface-container-low text-primary hover:bg-surface-container font-label-md text-label-md transition-colors shadow-sm" onclick="copyToClipboard('https://bharatgateway.internal/receipts/inv-98242.pdf', 'Receipt link generated!')">
+<span class="material-symbols-outlined text-lg">download</span>
+<span>Tax Receipt / GST</span>
+</button>
+<div class="relative">
+<button class="flex items-center gap-1 px-3 py-2 rounded-lg bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md transition-colors shadow-sm" id="dropdownToggle" onclick="toggleMenu()">
+<span>Actions</span>
+<span class="material-symbols-outlined text-base">expand_more</span>
+</button>
+<div class="hidden absolute right-0 mt-2 w-52 bg-surface-container-lowest rounded-xl shadow-xl z-30 py-1.5 flex-col" id="actionMenu">
+<button class="flex items-center gap-2 px-4 py-2 text-left font-label-md text-label-md text-on-surface hover:bg-surface-container transition-colors w-full" onclick="copyToClipboard('429812984920', 'RRN / UTR copied')">
+<span class="material-symbols-outlined text-base">receipt_long</span>
+<span>Copy Bank UTR</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 text-left font-label-md text-label-md text-on-surface hover:bg-surface-container transition-colors w-full" onclick="alert('Viewing raw observer daemon audit log')">
+<span class="material-symbols-outlined text-base">terminal</span>
+<span>View Raw Telemetry</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 text-left font-label-md text-label-md text-on-surface hover:bg-surface-container transition-colors w-full" onclick="alert('Order flagged for offline auditor review.')">
+<span class="material-symbols-outlined text-base">flag</span>
+<span>Flag for Manual Audit</span>
+</button>
+<div class="h-px bg-surface-container-high my-1"></div>
+<button class="flex items-center gap-2 px-4 py-2 text-left font-label-md text-label-md text-error hover:bg-error-container transition-colors w-full" onclick="confirm('Initiate UPI reverse refund request to rajesh.sharma@okaxis?')">
+<span class="material-symbols-outlined text-base">undo</span>
+<span>Issue Reversal / Refund</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Primary Content Grid (70 / 30) -->
+<div class="px-margin pb-margin grid grid-cols-1 xl:grid-cols-12 gap-gutter items-start">
+<!-- LEFT MAIN COLUMN (approx 68% / 8 cols) -->
+<div class="xl:col-span-8 flex flex-col gap-space-lg">
+<!-- Transaction Financial Header Banner -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<!-- Key Amount Highlights -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md pb-space-md bg-surface-container-low rounded-lg p-space-md">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Gross Collected</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-currency-display text-currency-display text-primary tracking-tight">₹3,499.00</span>
+<span class="font-label-sm text-label-sm text-outline">INR</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary font-medium mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">verified</span>
+              100% Realized on A/c ..4819
+            </span>
+</div>
+<div class="flex flex-col sm:pl-space-md sm:border-l-0">
+<div class="flex items-center gap-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Gateway Fee / MDR</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.2 rounded bg-secondary-fixed text-on-secondary-fixed font-bold">0% UPI</span>
+</div>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-currency-display text-currency-display text-on-surface-variant font-medium">₹0.00</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Zero aggregator markup</span>
+</div>
+<div class="flex flex-col sm:pl-space-md">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Net Merchant Yield</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-currency-display text-currency-display text-secondary tracking-tight">₹3,499.00</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline mt-0.5">Direct to ICICI Current</span>
+</div>
+</div>
+<!-- 2x4 Data Matrix for Payment Specs -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-space-lg gap-y-space-md pt-space-xs">
+<!-- Payer UPI ID -->
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-outline">Payer VPA / Handle</span>
+<div class="flex items-center justify-between mt-1 p-2 bg-surface-container rounded-lg">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-primary text-base">alternate_email</span>
+<span class="font-currency-tabular text-currency-tabular font-semibold text-on-surface truncate">rajesh.sharma@okaxis</span>
+</div>
+<button class="text-outline hover:text-primary transition-colors p-1" onclick="copyToClipboard('rajesh.sharma@okaxis', 'Payer VPA copied')" title="Copy VPA">
+<span class="material-symbols-outlined text-base">content_copy</span>
+</button>
+</div>
+</div>
+<!-- Bank UTR Reference -->
+<div class="flex flex-col">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase text-outline">Bank Reference / UTR</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.2 rounded bg-secondary-container text-on-secondary font-bold text-[10px]">NPCI VALIDATED</span>
+</div>
+<div class="flex items-center justify-between mt-1 p-2 bg-surface-container rounded-lg">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-secondary text-base">receipt</span>
+<span class="font-currency-tabular text-currency-tabular font-mono font-bold text-on-surface truncate tracking-wider">429812984920</span>
+</div>
+<button class="text-outline hover:text-primary transition-colors p-1" onclick="copyToClipboard('429812984920', 'UTR copied!')" title="Copy UTR">
+<span class="material-symbols-outlined text-base">content_copy</span>
+</button>
+</div>
+</div>
+<!-- Payer Identity -->
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-outline">Payer Name &amp; Contact</span>
+<div class="flex items-center justify-between mt-1 p-2 bg-surface-container rounded-lg">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-on-surface-variant text-base">account_circle</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Rajeshwar Sharma</span>
+<span class="font-body-sm text-body-sm text-outline font-mono">+91 98452 11094</span>
+</div>
+</div>
+<a class="p-1.5 rounded-lg bg-surface-container-high text-secondary hover:bg-secondary hover:text-on-secondary transition-colors" href="https://wa.me/919845211094?text=Hi%20Rajeshwar,%20confirming%20receipt%20for%20order%20ORD-98242" target="_blank" title="Message on WhatsApp">
+<span class="material-symbols-outlined text-base">chat</span>
+</a>
+</div>
+</div>
+<!-- Merchant Virtual Account Recipient -->
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-outline">Credited Merchant VPA</span>
+<div class="flex items-center justify-between mt-1 p-2 bg-surface-container rounded-lg">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-primary text-base">account_balance</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">kisanagro@icici</span>
+<span class="font-body-sm text-body-sm text-outline">Primary Auto-Sweep Current A/c</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-base">check_circle</span>
+</div>
+</div>
+<!-- Payment Rail & Client App -->
+<div class="flex items-center justify-between p-3 bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-surface-container-lowest flex items-center justify-center shadow-xs">
+<span class="material-symbols-outlined text-primary text-lg">smartphone</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-outline block leading-none">Rail / Application</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Google Pay (UPI 2.0 Intent)</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono">Android v14</span>
+</div>
+<!-- Checkout Mode & IP -->
+<div class="flex items-center justify-between p-3 bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-surface-container-lowest flex items-center justify-center shadow-xs">
+<span class="material-symbols-outlined text-primary text-lg">qr_code_2</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-outline block leading-none">Checkout Experience</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Dynamic Intent QR Modal</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono">5m Expiry</span>
+</div>
+</div>
+</div>
+<!-- Lifecycle & Observer Audit Chronology -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-xl">timeline</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Payment Lifecycle &amp; Observer Telemetry</h2>
+</div>
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded bg-secondary-fixed text-on-secondary-fixed font-semibold">
+            Total Flow: 12.6s (End-to-End)
+          </span>
+</div>
+<!-- Vertical Step Timeline -->
+<div class="relative pl-6 space-y-6 before:content-[''] before:absolute before:left-2.5 before:top-2 before:bottom-2 before:w-0.5 before:bg-surface-container-high">
+<!-- Step 1 -->
+<div class="relative group">
+<div class="absolute -left-6 top-1 h-3.5 w-3.5 rounded-full bg-primary-container ring-4 ring-surface-container-lowest flex items-center justify-center">
+<div class="h-1.5 w-1.5 rounded-full bg-on-primary"></div>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg hover:bg-surface-container transition-colors">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface">1. Payment Intent Created</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.2 rounded bg-surface-container-highest text-on-surface-variant font-mono">200 Created</span>
+</div>
+<div class="flex items-center gap-2 font-mono text-outline font-label-sm text-label-sm">
+<span class="text-on-surface font-medium">18:42:10.012 IST</span>
+<span>(+0.0s)</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Dynamic UPI payload generated with cryptographic checksum token (<code class="bg-surface-container-highest px-1 py-0.5 rounded text-primary">crc_8f99</code>). Allocated 5-minute expiry lock. Client IP: <strong class="text-on-surface">157.48.21.90</strong> (Airtel Broadband, Karnataka).
+              </p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="relative group">
+<div class="absolute -left-6 top-1 h-3.5 w-3.5 rounded-full bg-primary-container ring-4 ring-surface-container-lowest flex items-center justify-center">
+<div class="h-1.5 w-1.5 rounded-full bg-on-primary"></div>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg hover:bg-surface-container transition-colors">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface">2. QR Scanned / UPI Intent Triggered</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.2 rounded bg-primary-fixed text-primary font-mono">GPay App Switch</span>
+</div>
+<div class="flex items-center gap-2 font-mono text-outline font-label-sm text-label-sm">
+<span class="text-on-surface font-medium">18:42:18.440 IST</span>
+<span class="text-secondary font-semibold">(+8.4s)</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Customer opened Google Pay via deep-link scheme <code class="bg-surface-container-highest px-1 py-0.5 rounded text-primary font-mono text-[11px]">upi://pay?pa=kisanagro@icici&amp;pn=KisanAgro&amp;am=3499.00&amp;tr=ORD-98242</code>. Intent handoff acknowledged.
+              </p>
+</div>
+</div>
+<!-- Step 3 (Crucial Observer SMS Match) -->
+<div class="relative group">
+<div class="absolute -left-6 top-1 h-3.5 w-3.5 rounded-full bg-secondary ring-4 ring-surface-container-lowest flex items-center justify-center">
+<div class="h-1.5 w-1.5 rounded-full bg-on-secondary"></div>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-bold text-secondary">3. Android Daemon Listener Match</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-secondary-container text-on-secondary-fixed font-bold">Primary Observer</span>
+</div>
+<div class="flex items-center gap-2 font-mono text-outline font-label-sm text-label-sm">
+<span class="text-on-surface font-medium">18:42:21.230 IST</span>
+<span class="text-secondary font-semibold">(+2.8s)</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-2">
+                Foreground Android daemon on <strong class="text-on-surface">Samsung Galaxy M14 (MID-APP-01)</strong> intercepted incoming ICICI Bank transaction notification. Regex engine successfully parsed exact amount <span class="font-mono text-primary font-medium">₹3,499.00</span> and RRN <span class="font-mono text-primary font-bold">429812984920</span>.
+              </p>
+<div class="p-2.5 rounded bg-surface-container text-on-surface font-mono text-body-sm flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-sm mt-0.5">sms</span>
+<span class="text-[12px] leading-relaxed">
+                  "ICICI Bank Acct XX4819 credited with Rs 3,499.00 on 24-Oct-24 by UPI/429812984920/rajesh.sharma@okaxis. Bal: Rs 1,42,850.00"
+                </span>
+</div>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="relative group">
+<div class="absolute -left-6 top-1 h-3.5 w-3.5 rounded-full bg-primary-container ring-4 ring-surface-container-lowest flex items-center justify-center">
+<div class="h-1.5 w-1.5 rounded-full bg-on-primary"></div>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg hover:bg-surface-container transition-colors">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface">4. Secondary Corroboration (Gmail API Hook)</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.2 rounded bg-surface-container-highest text-on-surface-variant font-mono">100% Score</span>
+</div>
+<div class="flex items-center gap-2 font-mono text-outline font-label-sm text-label-sm">
+<span class="text-on-surface font-medium">18:42:22.040 IST</span>
+<span class="text-outline font-medium">(+0.8s)</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Bank credit email statement received at finance-ops@kisanagro.com. Gmail push webhook validated same UTR and exact balance transition. Cross-observer consensus verified.
+              </p>
+</div>
+</div>
+<!-- Step 5 -->
+<div class="relative group">
+<div class="absolute -left-6 top-1 h-3.5 w-3.5 rounded-full bg-secondary ring-4 ring-surface-container-lowest flex items-center justify-center">
+<div class="h-1.5 w-1.5 rounded-full bg-on-secondary"></div>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg hover:bg-surface-container transition-colors">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface">5. Order Reconciled &amp; State Committed</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.2 rounded bg-secondary-container text-on-secondary font-mono">PENDING → SUCCESS</span>
+</div>
+<div class="flex items-center gap-2 font-mono text-outline font-label-sm text-label-sm">
+<span class="text-on-surface font-medium">18:42:22.450 IST</span>
+<span class="text-outline font-medium">(+0.4s)</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Internal ledger ledger updated. Transaction committed to self-hosted SQLite/PostgreSQL store. Stock reservation for fertilizer batch confirmed.
+              </p>
+</div>
+</div>
+<!-- Step 6 -->
+<div class="relative group">
+<div class="absolute -left-6 top-1 h-3.5 w-3.5 rounded-full bg-secondary-fixed-dim ring-4 ring-surface-container-lowest flex items-center justify-center">
+<div class="h-1.5 w-1.5 rounded-full bg-on-secondary-fixed"></div>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg hover:bg-surface-container transition-colors">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface">6. Webhook Dispatched to Merchant ERP</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.2 rounded bg-secondary-container text-on-secondary font-mono">HTTP 200 OK (160ms)</span>
+</div>
+<div class="flex items-center gap-2 font-mono text-outline font-label-sm text-label-sm">
+<span class="text-on-surface font-medium">18:42:22.610 IST</span>
+<span class="text-outline font-medium">(+0.16s)</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Signed HMAC-SHA256 payload posted to <span class="font-mono text-on-surface text-xs font-semibold">https://api.kisanagro.com/v1/webhooks/upi-pay</span>. Acknowledged by remote billing server.
+              </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Webhook Payload Inspector & Delivery Log -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-md">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-xl">code_blocks</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Webhook Delivery &amp; Payload Inspector</h2>
+</div>
+<p class="font-body-sm text-body-sm text-outline mt-0.5">
+              Target: <code class="font-mono text-on-surface">https://api.kisanagro.com/v1/webhooks/upi-pay</code>
+</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded bg-secondary-container text-on-secondary-fixed font-semibold flex items-center gap-1">
+<span class="h-1.5 w-1.5 rounded-full bg-secondary"></span>
+              Delivered • 200 OK
+            </span>
+<span class="font-label-sm text-label-sm px-2 py-1 rounded bg-surface-container text-on-surface-variant font-mono">Attempt 1 of 5</span>
+</div>
+</div>
+<!-- Inspector Tabs -->
+<div class="flex items-center gap-space-xs mb-space-sm">
+<button class="px-space-md py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md transition-colors" id="tabPayloadBtn" onclick="switchTab('payload')">
+            JSON Payload
+          </button>
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container font-label-md text-label-md transition-colors" id="tabHeadersBtn" onclick="switchTab('headers')">
+            Request Headers
+          </button>
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container font-label-md text-label-md transition-colors" id="tabResponseBtn" onclick="switchTab('response')">
+            Merchant Response (160ms)
+          </button>
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container font-label-md text-label-md transition-colors" id="tabRedriveBtn" onclick="switchTab('redrive')">
+            Delivery Audit (1)
+          </button>
+</div>
+<!-- Code Block Container -->
+<div class="relative bg-primary text-surface-container-lowest rounded-xl p-space-md font-mono text-[13px] leading-relaxed overflow-x-auto shadow-inner">
+<div class="absolute right-3 top-3 flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-primary-container font-mono">application/json</span>
+<button class="p-1 rounded bg-primary-container text-on-primary hover:bg-surface-container-high hover:text-primary transition-colors" onclick="copyCodeContent()" title="Copy Raw JSON">
+<span class="material-symbols-outlined text-base">file_copy</span>
+</button>
+</div>
+<!-- Payload View -->
+<pre class="text-on-primary selection:bg-surface-variant selection:text-primary" id="view-payload"><code>{
+  <span class="text-primary-fixed-dim">"event"</span>: <span class="text-secondary-fixed">"payment.successful"</span>,
+  <span class="text-primary-fixed-dim">"event_id"</span>: <span class="text-tertiary-fixed">"evt_98242_1729775542"</span>,
+  <span class="text-primary-fixed-dim">"timestamp"</span>: 1729775542,
+  <span class="text-primary-fixed-dim">"data"</span>: {
+    <span class="text-primary-fixed-dim">"order_id"</span>: <span class="text-secondary-fixed">"ORD-98242"</span>,
+    <span class="text-primary-fixed-dim">"amount"</span>: 349900,
+    <span class="text-primary-fixed-dim">"currency"</span>: <span class="text-secondary-fixed">"INR"</span>,
+    <span class="text-primary-fixed-dim">"status"</span>: <span class="text-secondary-fixed">"SUCCESS"</span>,
+    <span class="text-primary-fixed-dim">"utr"</span>: <span class="text-tertiary-fixed">"429812984920"</span>,
+    <span class="text-primary-fixed-dim">"payer"</span>: {
+      <span class="text-primary-fixed-dim">"name"</span>: <span class="text-secondary-fixed">"Rajeshwar Sharma"</span>,
+      <span class="text-primary-fixed-dim">"vpa"</span>: <span class="text-secondary-fixed">"rajesh.sharma@okaxis"</span>,
+      <span class="text-primary-fixed-dim">"phone"</span>: <span class="text-secondary-fixed">"+919845211094"</span>
+    },
+    <span class="text-primary-fixed-dim">"rail"</span>: <span class="text-secondary-fixed">"UPI"</span>,
+    <span class="text-primary-fixed-dim">"app"</span>: <span class="text-secondary-fixed">"google_pay"</span>,
+    <span class="text-primary-fixed-dim">"observer"</span>: {
+      <span class="text-primary-fixed-dim">"channel"</span>: <span class="text-secondary-fixed">"android_daemon"</span>,
+      <span class="text-primary-fixed-dim">"device_id"</span>: <span class="text-secondary-fixed">"MID-APP-01"</span>,
+      <span class="text-primary-fixed-dim">"match_latency_ms"</span>: 1220,
+      <span class="text-primary-fixed-dim">"secondary_channel"</span>: <span class="text-secondary-fixed">"gmail_hook"</span>
+    },
+    <span class="text-primary-fixed-dim">"signature"</span>: <span class="text-secondary-fixed">"hmac_sha256_9b83f0923b726481c9a63278912c89e"</span>
+  }
+}</code></pre>
+<!-- Headers View (hidden by default) -->
+<pre class="hidden text-on-primary" id="view-headers"><code>POST /v1/webhooks/upi-pay HTTP/1.1
+Host: api.kisanagro.com
+Content-Type: application/json
+User-Agent: BharatGateway-Dispatcher/2.4.1 (Self-Hosted Linux)
+X-Gateway-Signature: 9b83f0923b726481c9a63278912c89e
+X-Gateway-Event: payment.successful
+X-Gateway-Delivery: del_4891024_118
+X-Gateway-Timestamp: 1729775542</code></pre>
+<!-- Response View (hidden by default) -->
+<pre class="hidden text-secondary-fixed" id="view-response"><code>HTTP/1.1 200 OK
+Date: Thu, 24 Oct 2024 13:12:22 GMT
+Content-Type: application/json; charset=utf-8
+Server: nginx/1.24.0 (Ubuntu)
+
+{
+  "received": true,
+  "order_id": "ORD-98242",
+  "invoice_issued": "INV-2024-8842",
+  "fulfillment_status": "QUEUED_FOR_DISPATCH"
+}</code></pre>
+<!-- Redrive View (hidden by default) -->
+<div class="hidden text-body-sm font-sans space-y-2 py-2" id="view-redrive">
+<div class="flex items-center justify-between p-2 rounded bg-primary-container text-on-primary">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed text-base">check_circle</span>
+<span>Attempt #1: 24 Oct 2024 18:42:22.610</span>
+</div>
+<span class="font-mono text-secondary-fixed">200 OK (160ms)</span>
+</div>
+<p class="text-on-primary-container text-xs">No failed delivery attempts recorded. Retries remaining: 4/5.</p>
+</div>
+</div>
+<!-- Webhook Footer Bar -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mt-space-md pt-space-sm bg-surface-container-low p-space-sm rounded-lg">
+<div class="flex items-center gap-space-xs text-body-sm font-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-base">verified_user</span>
+<span>Signature Verified: <code class="font-mono font-semibold text-primary">HMAC-SHA256</code> with merchant secret</span>
+</div>
+<button class="flex items-center gap-1 font-label-md text-label-md text-primary font-semibold hover:underline" onclick="triggerRedrive()">
+<span class="material-symbols-outlined text-base">replay</span>
+<span>Manual Redrive Webhook</span>
+</button>
+</div>
+</div>
+</div>
+<!-- RIGHT METADATA COLUMN (approx 32% / 4 cols) -->
+<div class="xl:col-span-4 flex flex-col gap-space-lg">
+<!-- Observer Detection & Match Telemetry Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-xl">vital_signs</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Observer Diagnostics</h3>
+</div>
+<span class="h-2.5 w-2.5 rounded-full bg-secondary inline-block animate-pulse" title="Observer Engine Healthy"></span>
+</div>
+<p class="font-body-sm text-body-sm text-outline mb-space-md">
+          Hardware telemetry at the instant this credit event was matched:
+        </p>
+<!-- Device Info Box -->
+<div class="p-space-sm bg-surface-container-low rounded-lg mb-space-sm space-y-2">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="text-outline">Primary Hardware</span>
+<span class="text-on-surface font-semibold font-mono">Samsung Galaxy M14 5G</span>
+</div>
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="text-outline">Daemon Instance</span>
+<span class="text-primary font-mono font-medium">MID-APP-01 (v2.4.1)</span>
+</div>
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="text-outline">Battery &amp; Thermal</span>
+<span class="text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary text-sm">battery_charging_90</span>
+              89% • 31.4°C (Normal)
+            </span>
+</div>
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="text-outline">Network Rail</span>
+<span class="text-on-surface flex items-center gap-1 font-mono">
+<span class="material-symbols-outlined text-primary text-sm">wifi</span>
+              Office-5GHz (-52 dBm)
+            </span>
+</div>
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="text-outline">Match Confidence</span>
+<span class="text-secondary font-bold font-mono">100.0% Exact Regex</span>
+</div>
+</div>
+<!-- Raw SMS Capture Inspector -->
+<div class="mt-space-sm">
+<span class="font-label-sm text-label-sm uppercase text-outline block mb-1">Raw Extracted Bank SMS</span>
+<div class="p-space-sm bg-surface-container rounded-lg font-mono text-[11px] leading-relaxed text-on-surface">
+            "ICICI Bank Acct XX4819 credited with Rs 3,499.00 on 24-Oct-24 by UPI/429812984920/rajesh.sharma@okaxis. Bal: Rs 1,42,850.00"
+          </div>
+</div>
+<!-- Secondary Observer State -->
+<div class="mt-space-md pt-space-sm bg-surface-container-low p-space-sm rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">mail</span>
+<div>
+<span class="font-label-md text-label-md font-semibold text-on-surface block leading-none">Gmail API Hook</span>
+<span class="font-body-sm text-body-sm text-outline">Verified 0.8s later</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-secondary-container text-on-secondary font-semibold">Synced</span>
+</div>
+</div>
+<!-- Customer History & Risk Profile -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-xl">verified_user</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Customer Risk Assessment</h3>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-secondary-container text-on-secondary font-semibold">
+            Low Risk (0.01)
+          </span>
+</div>
+<!-- Metric strip -->
+<div class="grid grid-cols-2 gap-space-sm my-space-sm">
+<div class="p-2.5 rounded-lg bg-surface-container-low">
+<span class="font-label-sm text-label-sm text-outline block">Order Count</span>
+<span class="font-headline-md text-headline-md text-on-surface">4 Orders</span>
+<span class="font-body-sm text-body-sm text-secondary block font-medium">100% Success</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low">
+<span class="font-label-sm text-label-sm text-outline block">Lifetime Spend</span>
+<span class="font-headline-md text-headline-md text-primary font-bold">₹14,290</span>
+<span class="font-body-sm text-body-sm text-outline block">No disputes</span>
+</div>
+</div>
+<!-- Technical Client Fingerprint -->
+<div class="space-y-2 pt-space-xs">
+<div class="flex items-start justify-between font-label-md text-label-md">
+<span class="text-outline">Client IP</span>
+<span class="text-on-surface font-mono font-medium text-right">157.48.21.90 (KA, India)</span>
+</div>
+<div class="flex items-start justify-between font-label-md text-label-md">
+<span class="text-outline">Browser / OS</span>
+<span class="text-on-surface text-right">Chrome 130 • Android 14</span>
+</div>
+<div class="flex items-start justify-between font-label-md text-label-md">
+<span class="text-outline">Device Consistency</span>
+<span class="text-secondary font-semibold text-right">Known Hardware FP</span>
+</div>
+</div>
+</div>
+<!-- Merchant Internal Notes & Operational Tags -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-xl">label</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Tags &amp; Internal Notes</h3>
+</div>
+</div>
+<!-- Tags -->
+<div class="flex flex-wrap gap-1.5 mb-space-md">
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-surface-container text-primary font-mono font-medium">#auto-matched</span>
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-surface-container text-primary font-mono font-medium">#agro-fertilizer-batch</span>
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-surface-container text-primary font-mono font-medium">#fast-settlement</span>
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-mono font-medium">#zero-fee</span>
+</div>
+<!-- Existing Internal Audit Note -->
+<div class="p-space-sm bg-surface-container-low rounded-lg mb-space-sm">
+<div class="flex items-center justify-between text-outline font-label-sm text-label-sm mb-1">
+<span class="font-medium text-on-surface">Kisan Billing Engine</span>
+<span>24 Oct 18:42</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Auto-reconciled against invoice <span class="font-mono text-primary font-semibold">#INV-2024-8842</span>. Inventory batch reservation released for delivery.
+          </p>
+</div>
+<!-- Add Note Input -->
+<div class="flex flex-col gap-2">
+<label class="font-label-sm text-label-sm uppercase text-outline" for="newNote">Append Finance Remark</label>
+<div class="flex gap-2">
+<input class="flex-1 bg-surface-container-low text-on-surface placeholder:text-outline px-3 py-1.5 rounded-lg font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary" id="newNote" placeholder="Add audit note or PO reference..." type="text"/>
+<button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-colors" onclick="addMerchantNote()">
+              Add
+            </button>
+</div>
+</div>
+</div>
+<!-- Settlement Guarantee Card -->
+<div class="bg-surface-container-high rounded-xl p-space-md flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-2xl mt-0.5">account_balance_wallet</span>
+<div>
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface">Zero Merchant Deductions</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            This UPI payment was credited directly to your ICICI Bank account with 0.00% gateway deductions and no rolling reserve withholdings.
+          </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Simple Vanilla Interactive Logic -->
+<script>
+  // Highlighting active 'Payments' nav item in Shell
+  (function initActiveNavigation() {
+    try {
+      const paymentsNavLink = document.querySelector('a[data-path="payments"]');
+      if (paymentsNavLink) {
+        paymentsNavLink.classList.remove('text-on-surface-variant', 'hover:bg-surface-container');
+        paymentsNavLink.classList.add('bg-primary-container', 'text-on-primary', 'font-semibold');
+        const icon = paymentsNavLink.querySelector('.material-symbols-outlined');
+        if (icon) icon.classList.add('text-on-primary');
+        const badge = paymentsNavLink.querySelector('span:last-child');
+        if (badge) {
+          badge.classList.remove('bg-surface-container', 'text-primary');
+          badge.classList.add('bg-primary', 'text-on-primary');
+        }
+      }
+    } catch (e) {
+      console.warn('Shell navigation highlight could not apply', e);
+    }
+  })();
+
+  // Toast notifier
+  function showToast(message) {
+    const toast = document.getElementById('toast-notification');
+    const msgEl = document.getElementById('toast-message');
+    if (!toast || !msgEl) return;
+    msgEl.textContent = message;
+    toast.classList.remove('opacity-0', 'translate-y-20', 'pointer-events-none');
+    toast.classList.add('opacity-100', 'translate-y-0');
+    
+    setTimeout(() => {
+      toast.classList.remove('opacity-100', 'translate-y-0');
+      toast.classList.add('opacity-0', 'translate-y-20', 'pointer-events-none');
+    }, 2400);
+  }
+
+  // Copy helper
+  function copyToClipboard(text, customMessage) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(() => {
+        showToast(customMessage || 'Copied: ' + text);
+      }).catch(() => {
+        showToast('Copied: ' + text);
+      });
+    } else {
+      showToast('Copied: ' + text);
+    }
+  }
+
+  // Action Menu Dropdown Toggle
+  function toggleMenu() {
+    const menu = document.getElementById('actionMenu');
+    if (menu) {
+      menu.classList.toggle('hidden');
+    }
+  }
+
+  // Close dropdown on outside click
+  document.addEventListener('click', function(e) {
+    const toggle = document.getElementById('dropdownToggle');
+    const menu = document.getElementById('actionMenu');
+    if (menu && toggle && !toggle.contains(e.target) && !menu.contains(e.target)) {
+      menu.classList.add('hidden');
+    }
+  });
+
+  // Tab switching for Webhook Inspector
+  function switchTab(tabId) {
+    const views = {
+      payload: document.getElementById('view-payload'),
+      headers: document.getElementById('view-headers'),
+      response: document.getElementById('view-response'),
+      redrive: document.getElementById('view-redrive')
+    };
+
+    const buttons = {
+      payload: document.getElementById('tabPayloadBtn'),
+      headers: document.getElementById('tabHeadersBtn'),
+      response: document.getElementById('tabResponseBtn'),
+      redrive: document.getElementById('tabRedriveBtn')
+    };
+
+    Object.keys(views).forEach(key => {
+      if (views[key]) {
+        if (key === tabId) {
+          views[key].classList.remove('hidden');
+        } else {
+          views[key].classList.add('hidden');
+        }
+      }
+      if (buttons[key]) {
+        if (key === tabId) {
+          buttons[key].className = 'px-space-md py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md transition-colors';
+        } else {
+          buttons[key].className = 'px-space-md py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container font-label-md text-label-md transition-colors';
+        }
+      }
+    });
+  }
+
+  // Redrive simulation
+  function triggerRedrive() {
+    const redriveBtn = document.getElementById('redriveBtn');
+    if (redriveBtn) {
+      const origContent = redriveBtn.innerHTML;
+      redriveBtn.innerHTML = '<span class="material-symbols-outlined text-base animate-spin">refresh</span> Dispatching...';
+      redriveBtn.disabled = true;
+      setTimeout(() => {
+        redriveBtn.innerHTML = origContent;
+        redriveBtn.disabled = false;
+        showToast('Webhook re-delivered: HTTP 200 OK (158ms)');
+      }, 950);
+    }
+  }
+
+  // Copy code helper
+  function copyCodeContent() {
+    const activeView = document.querySelector('pre:not(.hidden)');
+    if (activeView) {
+      copyToClipboard(activeView.innerText, 'Payload copied to clipboard');
+    }
+  }
+
+  // Add Note Interaction
+  function addMerchantNote() {
+    const input = document.getElementById('newNote');
+    if (!input || !input.value.trim()) return;
+    showToast('Note saved: "' + input.value.trim() + '"');
+    input.value = '';
+  }
+</script></main></div></body></html>

@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-secondary-fixed": "#002109",
+          "on-tertiary-fixed-variant": "#6e3900",
+          "tertiary-fixed-dim": "#ffb77d",
+          "on-secondary": "#ffffff",
+          "on-primary-fixed": "#001c37",
+          "surface-variant": "#d3e4fe",
+          "error": "#ba1a1a",
+          "on-error": "#ffffff",
+          "on-surface": "#0b1c30",
+          "primary-fixed-dim": "#afc8ed",
+          "surface-bright": "#f8f9ff",
+          "surface-container-lowest": "#ffffff",
+          "surface-container": "#e5eeff",
+          "on-primary": "#ffffff",
+          "on-surface-variant": "#43474d",
+          "tertiary": "#261000",
+          "tertiary-container": "#442100",
+          "outline": "#74777e",
+          "secondary-container": "#7cf994",
+          "secondary": "#006e2d",
+          "tertiary-fixed": "#ffdcc3",
+          "on-tertiary-container": "#da7808",
+          "on-tertiary-fixed": "#2f1500",
+          "inverse-primary": "#afc8ed",
+          "on-secondary-fixed-variant": "#005320",
+          "error-container": "#ffdad6",
+          "on-tertiary": "#ffffff",
+          "surface-container-low": "#eff4ff",
+          "secondary-fixed": "#7ffc97",
+          "on-background": "#0b1c30",
+          "surface-dim": "#cbdbf5",
+          "surface-container-highest": "#d3e4fe",
+          "surface-container-high": "#dce9ff",
+          "primary-container": "#0f2b48",
+          "on-secondary-container": "#007230",
+          "outline-variant": "#c4c6ce",
+          "on-error-container": "#93000a",
+          "inverse-surface": "#213145",
+          "on-primary-fixed-variant": "#2f4867",
+          "primary": "#00162d",
+          "inverse-on-surface": "#eaf1ff",
+          "secondary-fixed-dim": "#62df7d",
+          "surface-tint": "#476080",
+          "background": "#f8f9ff",
+          "on-primary-container": "#7a93b5",
+          "surface": "#f8f9ff",
+          "primary-fixed": "#d2e4ff"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "margin": "2rem",
+          "gutter": "1.5rem",
+          "margin-mobile": "1rem",
+          "space-xl": "2.5rem",
+          "gutter-mobile": "0.75rem",
+          "space-lg": "1.5rem",
+          "space-xs": "0.25rem",
+          "space-sm": "0.5rem",
+          "space-md": "1rem"
+        },
+        "fontFamily": {
+          "headline-md": [
+            "Inter"
+          ],
+          "headline-xl-mobile": [
+            "Inter"
+          ],
+          "headline-lg-mobile": [
+            "Inter"
+          ],
+          "headline-lg": [
+            "Inter"
+          ],
+          "headline-xl": [
+            "Inter"
+          ],
+          "body-lg": [
+            "Inter"
+          ],
+          "body-sm": [
+            "Inter"
+          ],
+          "currency-display": [
+            "Inter"
+          ],
+          "label-sm": [
+            "Inter"
+          ],
+          "headline-sm": [
+            "Inter"
+          ],
+          "body-md": [
+            "Inter"
+          ],
+          "label-md": [
+            "Inter"
+          ],
+          "label-lg": [
+            "Inter"
+          ],
+          "currency-tabular": [
+            "Inter"
+          ]
+        },
+        "fontSize": {
+          "headline-md": [
+            "20px",
+            {
+              "lineHeight": "28px",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-xl-mobile": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-lg-mobile": [
+            "22px",
+            {
+              "lineHeight": "28px",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-lg": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-xl": [
+            "36px",
+            {
+              "lineHeight": "44px",
+              "fontWeight": "700"
+            }
+          ],
+          "body-lg": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "400"
+            }
+          ],
+          "body-sm": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "fontWeight": "400"
+            }
+          ],
+          "currency-display": [
+            "32px",
+            {
+              "lineHeight": "40px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ],
+          "label-sm": [
+            "11px",
+            {
+              "lineHeight": "14px",
+              "letterSpacing": "0.04em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-sm": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "600"
+            }
+          ],
+          "body-md": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "400"
+            }
+          ],
+          "label-md": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "fontWeight": "500"
+            }
+          ],
+          "label-lg": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "500"
+            }
+          ],
+          "currency-tabular": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "500"
+            }
+          ]
+        }
+      },
+    },
+  }</script><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/></head><body class="bg-background font-body-md text-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 px-space-md flex items-center justify-between bg-surface-container-low"><div class="flex items-center gap-space-xs"><img alt="Bharat Gateway Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VWvfzN_U2Btc9LZEDi9gnHE5P8mq4Mvb39vp7KCCUkKNKyuVIHgV1S6c1HYdU8daQDU8tKEND3YYqvFiW5marnRa3Ul0_cGzPl6akyXyNroxa3sLEYB3ih5-Kfg4ZTaN7OaWegekSKEDKD-lYONiq_dLyD9y-BySfehprojt8U726695JPdG4o9NQKjib5fUeSv1rscDx46vv5t8uShcIugxDgiJ7fKRDluBUeKQ0_g6ETA2bSTNdRZN7J"/><span class="font-headline-sm text-headline-sm text-primary tracking-tight">BharatGateway</span></div><span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded-lg bg-surface-container-high text-on-surface-variant font-medium">v2.4 Self-Hosted</span></div><div class="px-space-md pt-space-md"><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline px-space-xs mb-space-xs block">Main</span><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-semibold"><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard" href="#"><span class="font-label-lg text-label-lg">Dashboard</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="payments" href="#"><span class="font-label-lg text-label-lg">Payments</span><span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-surface-container text-primary font-bold">1,280</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="observers-heartbeats" href="#"><span class="font-label-lg text-label-lg">Observers / Heartbeats</span><span class="flex h-2 w-2 relative"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span></span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="customers" href="#"><span class="font-label-lg text-label-lg">Customers</span></a></nav></div><div class="px-space-md pt-space-lg"><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline px-space-xs mb-space-xs block">Configuration</span><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-semibold"><a class="flex items-center justify-between px-space-sm py-2 rounded-lg bg-primary-container text-on-primary font-semibold transition-all" data-path="branding-settings" href="#"><span class="font-label-lg text-label-lg">Branding Settings</span><span class="h-1.5 w-1.5 rounded-full bg-secondary-fixed"></span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="webhooks-api" href="#"><span class="font-label-lg text-label-lg">Webhooks &amp; API</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="system-logs" href="#"><span class="font-label-lg text-label-lg">System Logs</span></a></nav></div></div><div class="p-space-md bg-surface-container-low m-space-sm rounded-xl"><div class="flex items-center justify-between mb-space-xs"><div class="flex items-center gap-space-xs"><span class="h-2 w-2 rounded-full bg-secondary inline-block animate-pulse"></span><span class="font-label-sm text-label-sm font-semibold text-on-surface">UPI Listener Engine</span></div><span class="font-label-sm text-label-sm text-secondary font-bold">Active</span></div><div class="w-full bg-surface-container rounded-full h-1.5 mb-space-xs"><div class="bg-secondary h-1.5 rounded-full w-2/5"></div></div><div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm"><span>Mem: 248MB | CPU: 4%</span><span>v2.4.1 (Stable)</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl z-40 flex items-center justify-between px-gutter shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-md flex-1 max-w-xl"><div class="flex items-center gap-space-xs px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed"><span class="h-2 w-2 rounded-full bg-secondary inline-block"></span><span class="font-label-sm text-label-sm font-semibold">Production</span></div><div class="relative flex-1"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg">search</span><input class="w-full bg-surface-container-low text-on-surface placeholder:text-outline pl-9 pr-8 py-1.5 rounded-lg font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Quick UTR / Order ID lookup..." type="text"/><kbd class="absolute right-2.5 top-1/2 -translate-y-1/2 font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono">/</kbd></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs"><button class="flex items-center gap-space-xs px-space-sm py-1.5 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" type="button"><span class="material-symbols-outlined text-base">send</span><span>Test Webhook</span></button><button class="flex items-center gap-space-xs px-space-sm py-1.5 rounded-lg bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md transition-colors" type="button"><span class="material-symbols-outlined text-base">add</span><span>Create Payment Link</span></button></div><div class="relative flex items-center justify-center"><button class="text-on-surface-variant hover:text-on-surface transition-colors p-1.5 rounded-lg hover:bg-surface-container-low" type="button"><span class="material-symbols-outlined text-xl">notifications</span></button><span class="absolute top-1 right-1 h-2 w-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Kisan Agro Tech Pvt Ltd</span><span class="font-label-sm text-label-sm text-outline font-mono leading-tight">MID_884920</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-surface-container-high" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdx3kSektrAQovYY6vdQ9iHD_ilcYj2nD3BBPgFfKnH7xcUrvH5nk4J63QqHagj84hd2WbpbvxClocZQRUF1EKPMHH0DQiKzgLhZaDbLq_tf38ZmUkNegT5d59Y4RjlqaSm4lzNvgxnR03vxeokRN7CWvgYHgd6UDvFnb5CbL2v9DTZwa2KgaGKaz9fYSgUIqFYKxW13ADPyy0zqXvo15SvFvPUXbi3kJRFg2lRhhPUep222gIEqKaxQ"/></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Context & Quick Actions -->
+<div class="px-margin py-space-md bg-surface-container-low border-b border-surface-container-high/60 flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-space-xs text-outline font-label-sm text-label-sm uppercase tracking-wider">
+<span>Configuration</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-on-surface-variant font-semibold">Branding &amp; Checkout Appearance</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Branding &amp; Checkout Appearance</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Customize merchant identity, bank intent styling, and live UPI checkout theme for payers.</p>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<div class="flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<span class="h-2 w-2 rounded-full bg-secondary inline-block"></span>
+<span>Config syncd to <code class="font-mono text-primary font-bold">gateway-v2.4.json</code></span>
+</div>
+<button class="px-space-md py-2 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-base">undo</span>
+<span>Discard Changes</span>
+</button>
+<button class="px-space-md py-2 rounded-lg bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md shadow-sm transition-all flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-base">save</span>
+<span>Save &amp; Publish</span>
+</button>
+</div>
+</div>
+<!-- Main 2-Column Responsive Workspace -->
+<div class="px-margin py-space-lg grid grid-cols-1 xl:grid-cols-12 gap-gutter items-start">
+<!-- LEFT COLUMN: Configuration Controls (approx 58-60% -> 7 cols on 12 col grid) -->
+<div class="xl:col-span-7 flex flex-col gap-space-lg">
+<!-- 1. Merchant Identity & Logo Card -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm border border-surface-container-high/50 flex flex-col gap-space-md">
+<div class="flex items-start justify-between border-b border-surface-container-low pb-space-sm">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">storefront</span>
+<h2 class="font-headline-sm text-headline-sm text-primary">Merchant Identity</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Displayed across UPI dynamic QR frames, intent sheets, SMS receipts, and NPCI payment rails.</p>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-semibold">NPCI Compliant</span>
+</div>
+<!-- Business Display Name -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold flex items-center justify-between" for="businessName">
+<span>Business Legal / Trading Name</span>
+<span class="font-label-sm text-label-sm text-outline font-normal">Max 40 chars</span>
+</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest text-on-surface border border-outline-variant rounded-lg px-3 py-2 font-body-md text-body-md focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary shadow-xs transition-all" id="businessName" type="text" value="Kisan Agro Tech Pvt Ltd"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-secondary text-lg">verified</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">info</span>
+            Must exactly mirror your ICICI Current Account bank statement title to prevent UPI intent mis-routing.
+          </p>
+</div>
+<!-- Contact & Legal Support Line -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="supportEmail">Support Email Address</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-base">mail</span>
+<input class="w-full bg-surface-container-lowest text-on-surface border border-outline-variant rounded-lg pl-9 pr-3 py-2 font-body-md text-body-md focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary shadow-xs" id="supportEmail" type="email" value="support@kisanagro.com"/>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="whatsappContact">WhatsApp Resolution Desk</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-base">chat</span>
+<input class="w-full bg-surface-container-lowest text-on-surface border border-outline-variant rounded-lg pl-9 pr-3 py-2 font-body-md text-body-md focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary shadow-xs" id="whatsappContact" type="text" value="+91 98452 11094"/>
+</div>
+</div>
+</div>
+<!-- Logo Upload & Crop Controls -->
+<div class="flex flex-col gap-2 pt-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Merchant Gateway Emblem / Logo</label>
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-md p-space-md bg-surface-container-low rounded-xl">
+<!-- Current Logo Square -->
+<div class="flex flex-col items-center justify-center h-20 w-20 shrink-0 rounded-xl bg-primary-container text-on-primary p-2 relative shadow-inner overflow-hidden border border-outline-variant/40">
+<span class="material-symbols-outlined text-3xl text-secondary-fixed">spa</span>
+<span class="font-label-sm text-[9px] uppercase tracking-wider font-bold text-center mt-1 text-primary-fixed leading-none">KISAN AGRO</span>
+<span class="absolute bottom-1 right-1 h-2 w-2 rounded-full bg-secondary ring-2 ring-primary-container"></span>
+</div>
+<!-- Upload Zone -->
+<div class="flex-1 flex flex-col items-center justify-center p-space-sm border-2 border-dashed border-outline-variant hover:border-primary bg-surface-container-lowest rounded-lg cursor-pointer transition-colors group">
+<div class="flex items-center gap-2 text-primary font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-primary group-hover:-translate-y-0.5 transition-transform">cloud_upload</span>
+<span>Click to upload or drag logo asset</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline mt-0.5">PNG, SVG or WebP • Recommended 512×512px transparent (Max 2MB)</span>
+</div>
+<!-- Actions -->
+<div class="flex sm:flex-col justify-end gap-2 shrink-0">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-label-sm text-label-sm transition-colors" type="button">Replace</button>
+<button class="px-3 py-1.5 rounded-lg text-error hover:bg-error-container/40 font-label-sm text-label-sm transition-colors" type="button">Remove</button>
+</div>
+</div>
+<!-- Toggles for Logo Appearance -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm pt-space-xs">
+<label class="flex items-center gap-space-xs p-space-sm rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<input checked="" class="h-4 w-4 rounded accent-primary text-on-primary" type="checkbox"/>
+<span class="font-label-md text-label-md text-on-surface">Embed emblem in dynamic QR center</span>
+</label>
+<label class="flex items-center gap-space-xs p-space-sm rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<input checked="" class="h-4 w-4 rounded accent-primary text-on-primary" type="checkbox"/>
+<span class="font-label-md text-label-md text-on-surface">Enforce circular token crop in intent tray</span>
+</label>
+</div>
+</div>
+</section>
+<!-- 2. Color Palette & Theme Customizer Card -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm border border-surface-container-high/50 flex flex-col gap-space-md">
+<div class="flex items-start justify-between border-b border-surface-container-low pb-space-sm">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">palette</span>
+<h2 class="font-headline-sm text-headline-sm text-primary">Brand Color Palette &amp; Accents</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Shapes pay CTA buttons, countdown timer pulse rings, and app-switching intent highlights.</p>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-primary font-mono font-bold">HEX / HSL</span>
+</div>
+<!-- Primary Brand Swatch Selector -->
+<div class="flex flex-col gap-space-sm">
+<label class="font-label-md text-label-md text-on-surface font-semibold flex items-center justify-between">
+<span>Primary Brand Tone</span>
+<span class="font-body-sm text-body-sm text-outline">Selected: Deep Bharat Navy (<code class="text-primary font-mono">#0F2B48</code>)</span>
+</label>
+<!-- Swatch Matrix -->
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2">
+<!-- 1 Deep Navy Active -->
+<button class="p-2 rounded-xl bg-surface-container-low border-2 border-primary flex flex-col items-center gap-1.5 text-center relative group" type="button">
+<div class="w-full h-8 rounded-lg bg-[#0F2B48] flex items-center justify-center text-white shadow-xs">
+<span class="material-symbols-outlined text-sm">check</span>
+</div>
+<span class="font-label-sm text-[11px] font-bold text-primary">Bharat Navy</span>
+<span class="font-label-sm text-[10px] text-outline font-mono">#0F2B48</span>
+</button>
+<!-- 2 Royal Indigo -->
+<button class="p-2 rounded-xl bg-surface-container-low border border-transparent hover:border-outline-variant flex flex-col items-center gap-1.5 text-center transition-all group" type="button">
+<div class="w-full h-8 rounded-lg bg-[#1E40AF] shadow-xs"></div>
+<span class="font-label-sm text-[11px] text-on-surface-variant">Royal Indigo</span>
+<span class="font-label-sm text-[10px] text-outline font-mono">#1E40AF</span>
+</button>
+<!-- 3 Emerald Green -->
+<button class="p-2 rounded-xl bg-surface-container-low border border-transparent hover:border-outline-variant flex flex-col items-center gap-1.5 text-center transition-all group" type="button">
+<div class="w-full h-8 rounded-lg bg-[#0D7A53] shadow-xs"></div>
+<span class="font-label-sm text-[11px] text-on-surface-variant">Emerald</span>
+<span class="font-label-sm text-[10px] text-outline font-mono">#0D7A53</span>
+</button>
+<!-- 4 Agri Teal -->
+<button class="p-2 rounded-xl bg-surface-container-low border border-transparent hover:border-outline-variant flex flex-col items-center gap-1.5 text-center transition-all group" type="button">
+<div class="w-full h-8 rounded-lg bg-[#0D9488] shadow-xs"></div>
+<span class="font-label-sm text-[11px] text-on-surface-variant">Agri Teal</span>
+<span class="font-label-sm text-[10px] text-outline font-mono">#0D9488</span>
+</button>
+<!-- 5 Crimson Velvet -->
+<button class="p-2 rounded-xl bg-surface-container-low border border-transparent hover:border-outline-variant flex flex-col items-center gap-1.5 text-center transition-all group" type="button">
+<div class="w-full h-8 rounded-lg bg-[#9F1239] shadow-xs"></div>
+<span class="font-label-sm text-[11px] text-on-surface-variant">Crimson</span>
+<span class="font-label-sm text-[10px] text-outline font-mono">#9F1239</span>
+</button>
+<!-- 6 Slate Graphite -->
+<button class="p-2 rounded-xl bg-surface-container-low border border-transparent hover:border-outline-variant flex flex-col items-center gap-1.5 text-center transition-all group" type="button">
+<div class="w-full h-8 rounded-lg bg-[#1E293B] shadow-xs"></div>
+<span class="font-label-sm text-[11px] text-on-surface-variant">Charcoal</span>
+<span class="font-label-sm text-[10px] text-outline font-mono">#1E293B</span>
+</button>
+</div>
+<!-- Custom Hex Input -->
+<div class="flex items-center gap-space-sm pt-1">
+<div class="flex items-center gap-2 bg-surface-container-low border border-outline-variant px-3 py-1.5 rounded-lg w-full max-w-xs">
+<div class="w-5 h-5 rounded bg-[#0F2B48] shrink-0 border border-outline-variant"></div>
+<span class="font-mono text-body-sm font-semibold text-primary">#0F2B48</span>
+<button class="ml-auto text-outline hover:text-on-surface" title="Copy Hex" type="button">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+</button>
+</div>
+<span class="font-body-sm text-body-sm text-outline">Custom Hex values apply immediately to the right-hand preview.</span>
+</div>
+</div>
+<!-- Accent NPCI Verified Color -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md pt-space-xs border-t border-surface-container-low">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Payment Success &amp; Credit Tone</label>
+<div class="flex items-center gap-2 bg-surface-container-low border border-outline-variant px-3 py-1.5 rounded-lg">
+<div class="w-5 h-5 rounded bg-[#16A34A] shrink-0"></div>
+<span class="font-mono text-body-sm font-semibold text-secondary">#16A34A</span>
+<span class="font-label-sm text-[11px] px-1.5 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-semibold ml-auto">NPCI Green</span>
+</div>
+</div>
+<!-- Corner Roundness -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Button &amp; Modal Corner Radius</label>
+<div class="grid grid-cols-3 gap-1 bg-surface-container-low p-1 rounded-lg">
+<button class="py-1 rounded bg-surface-container-lowest text-primary font-label-sm text-label-sm font-bold shadow-xs" type="button">Sharp (4px)</button>
+<button class="py-1 rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm" type="button">Smooth (8px)</button>
+<button class="py-1 rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm" type="button">Pill (16px)</button>
+</div>
+</div>
+</div>
+<!-- Theme Mode Selection -->
+<div class="flex flex-col gap-2 pt-space-xs border-t border-surface-container-low">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Payer Screen Visual Mode</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<label class="flex items-start gap-3 p-space-sm rounded-xl border-2 border-primary bg-primary/5 cursor-pointer">
+<input checked="" class="mt-1 accent-primary" name="themeMode" type="radio"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-bold">Light Mode (Recommended)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Highest trust compliance for Indian netbanking &amp; rural UPI transactions.</span>
+</div>
+</label>
+<label class="flex items-start gap-3 p-space-sm rounded-xl border border-outline-variant/60 bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<input class="mt-1 accent-primary" name="themeMode" type="radio"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold">Auto Dark Mode</span>
+<span class="font-body-sm text-body-sm text-outline mt-0.5">Adapts dynamically when customer device runs night/dark OS theme.</span>
+</div>
+</label>
+</div>
+</div>
+</section>
+<!-- 3. UPI Checkout Modal Experience Settings Card -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm border border-surface-container-high/50 flex flex-col gap-space-md">
+<div class="flex items-start justify-between border-b border-surface-container-low pb-space-sm">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">tune</span>
+<h2 class="font-headline-sm text-headline-sm text-primary">Checkout Experience &amp; Trust Microcopy</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Configure trust badges, escrow assurances, and payer assistive notifications.</p>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-semibold">Self-Hosted VPA</span>
+</div>
+<!-- Custom Trust Notice Input -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold flex items-center justify-between" for="trustNotice">
+<span>Direct Settlement Trust Badge Subtitle</span>
+<span class="font-label-sm text-label-sm text-outline">Rendered at base of modal</span>
+</label>
+<textarea class="w-full bg-surface-container-lowest text-on-surface border border-outline-variant rounded-lg p-2.5 font-body-md text-body-md focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary shadow-xs resize-none" id="trustNotice" rows="2">Official direct payment to Kisan Agro Tech Pvt Ltd current account. Zero intermediate escrow delays.</textarea>
+</div>
+<!-- Layout Arrangement Segmented Choice -->
+<div class="flex flex-col gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Modal Header Composition</span>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<div class="p-space-sm rounded-lg border-2 border-primary bg-primary/5 flex items-center gap-3 cursor-pointer">
+<span class="material-symbols-outlined text-primary">vertical_align_center</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-bold">Centered Emblem &amp; Amount</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant">Recommended for scan-and-pay speed</span>
+</div>
+</div>
+<div class="p-space-sm rounded-lg border border-outline-variant/60 bg-surface-container-low flex items-center gap-3 cursor-pointer hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-outline">dock_to_right</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Left Aligned + Order Cart</span>
+<span class="font-body-sm text-[12px] text-outline">Includes itemized invoice expansion</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Checkout Features Toggle Suite -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Assistive Features for Payers</span>
+<div class="divide-y divide-surface-container-low">
+<div class="py-2.5 flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary p-1.5 rounded-lg bg-surface-container">pin</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Display 12-digit UPI Reference (UTR) Guide</span>
+<span class="font-body-sm text-body-sm text-outline">Shows visual animated guide for entering UTR if auto-webhook listener queues.</span>
+</div>
+</div>
+<input checked="" class="h-4 w-4 rounded accent-primary text-on-primary" type="checkbox"/>
+</div>
+<div class="py-2.5 flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary p-1.5 rounded-lg bg-surface-container">hourglass_top</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Real-Time Bank Queue Position Counter</span>
+<span class="font-body-sm text-body-sm text-outline">Displays bank heartbeat health indicator if ICICI/HDFC rails face NPCI load.</span>
+</div>
+</div>
+<input checked="" class="h-4 w-4 rounded accent-primary text-on-primary" type="checkbox"/>
+</div>
+<div class="py-2.5 flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary p-1.5 rounded-lg bg-surface-container">volume_up</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Play Soft Audio Chime on Credit Success</span>
+<span class="font-body-sm text-body-sm text-outline">Triggers subtle 440Hz confirmation tone (similar to merchant soundbox feedback).</span>
+</div>
+</div>
+<input checked="" class="h-4 w-4 rounded accent-primary text-on-primary" type="checkbox"/>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- RIGHT COLUMN: Real-Time Interactive WYSIWYG Preview (approx 40-42% -> 5 cols on 12 col grid) -->
+<div class="xl:col-span-5 flex flex-col gap-space-md sticky top-20">
+<!-- Preview Device & State Control Ribbon -->
+<div class="bg-surface-container-lowest p-space-sm rounded-xl border border-surface-container-high/60 shadow-xs flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1 bg-surface-container-low p-1 rounded-lg">
+<button class="flex items-center gap-1.5 px-3 py-1 rounded bg-surface-container-lowest text-primary font-label-sm text-label-sm font-bold shadow-xs" type="button">
+<span class="material-symbols-outlined text-base">desktop_windows</span>
+<span>Desktop Modal</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1 rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm" type="button">
+<span class="material-symbols-outlined text-base">smartphone</span>
+<span>Mobile Sheet</span>
+</button>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container/40 text-on-secondary-container font-label-sm text-label-sm">
+<span class="h-2 w-2 rounded-full bg-secondary inline-block animate-ping"></span>
+<span class="font-bold">Live Simulation</span>
+</div>
+</div>
+<!-- Step Simulator Tabs -->
+<div class="grid grid-cols-3 gap-1 bg-surface-container-low p-1 rounded-lg">
+<button class="py-1 rounded bg-primary text-on-primary font-label-sm text-label-sm font-semibold" type="button">1. QR &amp; Pay</button>
+<button class="py-1 rounded text-on-surface-variant hover:bg-surface-container font-label-sm text-label-sm" type="button">2. Verifying</button>
+<button class="py-1 rounded text-on-surface-variant hover:bg-surface-container font-label-sm text-label-sm" type="button">3. Success</button>
+</div>
+</div>
+<!-- Rendered WYSIWYG Customer Checkout Artifact -->
+<div class="relative rounded-2xl bg-gradient-to-b from-surface-container to-surface-container-high/80 p-space-md shadow-md border border-outline-variant/30 flex flex-col items-center justify-center">
+<!-- Background Ambient Grid Texture -->
+<div class="w-full max-w-sm bg-surface-container-lowest rounded-xl shadow-xl overflow-hidden border border-outline-variant/40 flex flex-col">
+<!-- Modal Top Security Bar -->
+<div class="bg-primary text-on-primary px-space-md py-2 flex items-center justify-between">
+<div class="flex items-center gap-1 text-[11px] font-label-sm text-on-primary-container">
+<span class="material-symbols-outlined text-sm text-secondary-fixed">lock</span>
+<span>NPCI Encrypted Session</span>
+</div>
+<div class="flex items-center gap-1 font-mono text-[11px] text-primary-fixed">
+<span class="material-symbols-outlined text-sm text-tertiary-fixed-dim">schedule</span>
+<span class="text-on-primary font-bold">04:52</span>
+</div>
+</div>
+<!-- Merchant Header Presentation -->
+<div class="p-space-md flex flex-col items-center text-center bg-surface-container-lowest border-b border-surface-container-low">
+<div class="h-12 w-12 rounded-xl bg-primary text-on-primary flex items-center justify-center shadow-sm relative mb-2">
+<span class="material-symbols-outlined text-secondary-fixed text-2xl">spa</span>
+<span class="absolute -bottom-1 -right-1 h-3.5 w-3.5 bg-secondary text-white rounded-full flex items-center justify-center text-[8px] font-bold">✓</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary leading-tight">Kisan Agro Tech Pvt Ltd</h3>
+<span class="font-label-sm text-[11px] text-on-surface-variant mt-0.5">ICICI Current A/c • MID_884920</span>
+<!-- Order reference & Grand Amount -->
+<div class="mt-space-sm pt-space-xs flex flex-col items-center">
+<span class="font-label-sm text-[11px] uppercase tracking-wider text-outline font-semibold">Order Total Due</span>
+<span class="font-currency-display text-currency-display text-primary font-bold tracking-tight">₹3,499.00</span>
+<span class="font-label-sm text-[11px] text-outline font-mono">Invoice #ORD-98242</span>
+</div>
+</div>
+<!-- QR Code Canvas Frame -->
+<div class="p-space-md bg-surface-container-lowest flex flex-col items-center">
+<!-- Rendered QR Box with Scanning Target Corners -->
+<div class="relative p-3 bg-white rounded-xl shadow-sm border border-surface-container-high flex flex-col items-center">
+<!-- Inline QR Code SVG Construction (Deterministic, lightweight, scalable) -->
+<div class="relative h-44 w-44 bg-white flex items-center justify-center">
+<svg class="w-full h-full text-primary" fill="currentColor" viewbox="0 0 100 100">
+<!-- QR Finder Pattern: Top-Left -->
+<rect fill="none" height="26" rx="2" stroke="currentColor" stroke-width="4" width="26" x="5" y="5"></rect>
+<rect fill="currentColor" height="14" rx="1" width="14" x="11" y="11"></rect>
+<!-- QR Finder Pattern: Top-Right -->
+<rect fill="none" height="26" rx="2" stroke="currentColor" stroke-width="4" width="26" x="69" y="5"></rect>
+<rect fill="currentColor" height="14" rx="1" width="14" x="75" y="11"></rect>
+<!-- QR Finder Pattern: Bottom-Left -->
+<rect fill="none" height="26" rx="2" stroke="currentColor" stroke-width="4" width="26" x="5" y="69"></rect>
+<rect fill="currentColor" height="14" rx="1" width="14" x="11" y="75"></rect>
+<!-- Alignment & Synchronizing Timing Patterns -->
+<rect height="4" width="4" x="36" y="8"></rect>
+<rect height="4" width="4" x="44" y="8"></rect>
+<rect height="4" width="4" x="52" y="8"></rect>
+<rect height="4" width="4" x="60" y="8"></rect>
+<rect height="4" width="4" x="8" y="36"></rect>
+<rect height="4" width="4" x="8" y="44"></rect>
+<rect height="4" width="4" x="8" y="52"></rect>
+<rect height="4" width="4" x="8" y="60"></rect>
+<!-- Data matrix blocks simulation -->
+<rect height="6" width="6" x="36" y="36"></rect>
+<rect height="6" width="4" x="44" y="36"></rect>
+<rect height="4" width="6" x="58" y="36"></rect>
+<rect height="5" width="5" x="36" y="46"></rect>
+<rect height="5" width="5" x="59" y="46"></rect>
+<rect height="4" width="7" x="36" y="58"></rect>
+<rect height="6" width="6" x="46" y="58"></rect>
+<rect height="4" width="6" x="58" y="58"></rect>
+<rect height="8" width="5" x="68" y="40"></rect>
+<rect height="4" width="6" x="76" y="40"></rect>
+<rect height="6" width="6" x="86" y="40"></rect>
+<rect height="6" width="8" x="68" y="52"></rect>
+<rect height="4" width="12" x="80" y="52"></rect>
+<rect height="6" width="6" x="68" y="64"></rect>
+<rect height="4" width="10" x="82" y="64"></rect>
+<rect height="6" width="6" x="72" y="76"></rect>
+<rect height="8" width="6" x="84" y="76"></rect>
+<rect height="6" width="8" x="40" y="72"></rect>
+<rect height="6" width="8" x="54" y="72"></rect>
+<rect height="6" width="10" x="38" y="84"></rect>
+<rect height="6" width="12" x="52" y="84"></rect>
+</svg>
+<!-- Center Emblem Overlay -->
+<div class="absolute h-9 w-9 rounded-full bg-surface-container-lowest shadow-md flex items-center justify-center p-0.5 border border-outline-variant/60">
+<div class="h-full w-full rounded-full bg-primary text-secondary-fixed flex items-center justify-center">
+<span class="font-headline-sm text-xs font-black">₹</span>
+</div>
+</div>
+</div>
+<!-- Corner targeting crosshairs -->
+<div class="absolute top-1.5 left-1.5 w-3 h-3 border-t-2 border-l-2 border-primary"></div>
+<div class="absolute top-1.5 right-1.5 w-3 h-3 border-t-2 border-r-2 border-primary"></div>
+<div class="absolute bottom-1.5 left-1.5 w-3 h-3 border-b-2 border-l-2 border-primary"></div>
+<div class="absolute bottom-1.5 right-1.5 w-3 h-3 border-b-2 border-r-2 border-primary"></div>
+</div>
+<!-- Scan Prompt with Multi-App Support Badges -->
+<span class="font-label-md text-label-md text-on-surface font-semibold mt-3">Scan with any UPI Enabled App</span>
+<div class="flex items-center gap-2 mt-1.5 text-on-surface-variant">
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-[10px] font-bold font-mono">GPay</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-[10px] font-bold font-mono">PhonePe</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-[10px] font-bold font-mono">Paytm</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-[10px] font-bold font-mono">BHIM</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-[10px] font-bold font-mono">CRED</span>
+</div>
+<!-- VPA Copier Pill -->
+<div class="mt-space-sm w-full bg-surface-container-low rounded-lg p-1.5 flex items-center justify-between border border-outline-variant/40">
+<div class="flex items-center gap-1.5 pl-2 overflow-hidden">
+<span class="font-label-sm text-[11px] text-outline">VPA:</span>
+<span class="font-mono text-body-sm font-bold text-primary truncate">kisanagro@icici</span>
+</div>
+<button class="px-2 py-1 rounded bg-surface-container-lowest text-primary hover:bg-surface-container font-label-sm text-[11px] font-bold shadow-xs flex items-center gap-1 shrink-0" type="button">
+<span class="material-symbols-outlined text-xs">content_copy</span>
+<span>Copy</span>
+</button>
+</div>
+</div>
+<!-- One-Click UPI Intent Tray -->
+<div class="px-space-md pb-space-sm bg-surface-container-lowest flex flex-col gap-1.5">
+<span class="font-label-sm text-[11px] uppercase tracking-wider text-outline font-semibold text-center">or open directly via installed app</span>
+<div class="grid grid-cols-2 gap-1.5">
+<button class="py-2 px-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center gap-2 border border-outline-variant/30 transition-colors" type="button">
+<div class="h-4 w-4 rounded-full bg-blue-600 text-white flex items-center justify-center text-[9px] font-bold">G</div>
+<span class="font-semibold text-xs">Google Pay</span>
+</button>
+<button class="py-2 px-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center gap-2 border border-outline-variant/30 transition-colors" type="button">
+<div class="h-4 w-4 rounded-full bg-purple-700 text-white flex items-center justify-center text-[9px] font-bold">पे</div>
+<span class="font-semibold text-xs">PhonePe</span>
+</button>
+<button class="py-2 px-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center gap-2 border border-outline-variant/30 transition-colors" type="button">
+<div class="h-4 w-4 rounded bg-[#00baf2] text-white flex items-center justify-center text-[8px] font-black">PTM</div>
+<span class="font-semibold text-xs">Paytm UPI</span>
+</button>
+<button class="py-2 px-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center gap-2 border border-outline-variant/30 transition-colors" type="button">
+<div class="h-4 w-4 rounded-full bg-black text-white flex items-center justify-center text-[8px] font-bold">C</div>
+<span class="font-semibold text-xs">CRED UPI</span>
+</button>
+</div>
+</div>
+<!-- Configured Trust Notice Footer -->
+<div class="p-space-sm bg-surface-container-low text-center border-t border-surface-container-high/60">
+<p class="font-body-sm text-[11px] text-on-surface-variant leading-tight">
+              Official direct payment to Kisan Agro Tech Pvt Ltd current account. Zero intermediate escrow delays.
+            </p>
+<div class="flex items-center justify-center gap-1.5 mt-1.5 font-label-sm text-[10px] text-outline">
+<span class="material-symbols-outlined text-xs text-secondary">verified_user</span>
+<span>256-bit NPCI Bank Handshake</span>
+<span>•</span>
+<span class="text-primary hover:underline cursor-pointer">Help: +91 98452 11094</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Canvas Actions & Developer Inspection Toolbar -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl border border-surface-container-high/60 shadow-xs flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Hosted Checkout Integration</span>
+<span class="font-label-sm text-label-sm text-secondary font-mono font-bold">HTTP 200 Ready</span>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-low rounded-lg p-1.5 border border-outline-variant/30">
+<span class="material-symbols-outlined text-outline text-base pl-1">link</span>
+<span class="font-mono text-body-sm text-on-surface-variant truncate flex-1 px-1">https://pay.kisanagro.com/c/ord_98242</span>
+<button class="px-2 py-1 rounded bg-surface-container-lowest text-primary hover:bg-surface-container font-label-sm text-label-sm font-semibold shadow-xs" type="button">Copy</button>
+</div>
+<div class="flex items-center justify-between pt-1 gap-2">
+<button class="flex-1 py-1.5 px-3 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-container font-label-md text-label-md flex items-center justify-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-base">open_in_new</span>
+<span>Test In Modal Pop-up</span>
+</button>
+<div class="flex items-center gap-1 text-outline font-label-sm text-label-sm">
+<span>Asset:</span>
+<button class="font-bold text-primary hover:underline" type="button">SVG</button>
+<span>|</span>
+<button class="text-on-surface-variant hover:underline" type="button">PNG 300DPI</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

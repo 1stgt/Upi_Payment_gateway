@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-secondary-fixed": "#002109",
+          "on-tertiary-fixed-variant": "#6e3900",
+          "tertiary-fixed-dim": "#ffb77d",
+          "on-secondary": "#ffffff",
+          "on-primary-fixed": "#001c37",
+          "surface-variant": "#d3e4fe",
+          "error": "#ba1a1a",
+          "on-error": "#ffffff",
+          "on-surface": "#0b1c30",
+          "primary-fixed-dim": "#afc8ed",
+          "surface-bright": "#f8f9ff",
+          "surface-container-lowest": "#ffffff",
+          "surface-container": "#e5eeff",
+          "on-primary": "#ffffff",
+          "on-surface-variant": "#43474d",
+          "tertiary": "#261000",
+          "tertiary-container": "#442100",
+          "outline": "#74777e",
+          "secondary-container": "#7cf994",
+          "secondary": "#006e2d",
+          "tertiary-fixed": "#ffdcc3",
+          "on-tertiary-container": "#da7808",
+          "on-tertiary-fixed": "#2f1500",
+          "inverse-primary": "#afc8ed",
+          "on-secondary-fixed-variant": "#005320",
+          "error-container": "#ffdad6",
+          "on-tertiary": "#ffffff",
+          "surface-container-low": "#eff4ff",
+          "secondary-fixed": "#7ffc97",
+          "on-background": "#0b1c30",
+          "surface-dim": "#cbdbf5",
+          "surface-container-highest": "#d3e4fe",
+          "surface-container-high": "#dce9ff",
+          "primary-container": "#0f2b48",
+          "on-secondary-container": "#007230",
+          "outline-variant": "#c4c6ce",
+          "on-error-container": "#93000a",
+          "inverse-surface": "#213145",
+          "on-primary-fixed-variant": "#2f4867",
+          "primary": "#00162d",
+          "inverse-on-surface": "#eaf1ff",
+          "secondary-fixed-dim": "#62df7d",
+          "surface-tint": "#476080",
+          "background": "#f8f9ff",
+          "on-primary-container": "#7a93b5",
+          "surface": "#f8f9ff",
+          "primary-fixed": "#d2e4ff"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "margin": "2rem",
+          "gutter": "1.5rem",
+          "margin-mobile": "1rem",
+          "space-xl": "2.5rem",
+          "gutter-mobile": "0.75rem",
+          "space-lg": "1.5rem",
+          "space-xs": "0.25rem",
+          "space-sm": "0.5rem",
+          "space-md": "1rem"
+        },
+        "fontFamily": {
+          "headline-md": [
+            "Inter"
+          ],
+          "headline-xl-mobile": [
+            "Inter"
+          ],
+          "headline-lg-mobile": [
+            "Inter"
+          ],
+          "headline-lg": [
+            "Inter"
+          ],
+          "headline-xl": [
+            "Inter"
+          ],
+          "body-lg": [
+            "Inter"
+          ],
+          "body-sm": [
+            "Inter"
+          ],
+          "currency-display": [
+            "Inter"
+          ],
+          "label-sm": [
+            "Inter"
+          ],
+          "headline-sm": [
+            "Inter"
+          ],
+          "body-md": [
+            "Inter"
+          ],
+          "label-md": [
+            "Inter"
+          ],
+          "label-lg": [
+            "Inter"
+          ],
+          "currency-tabular": [
+            "Inter"
+          ]
+        },
+        "fontSize": {
+          "headline-md": [
+            "20px",
+            {
+              "lineHeight": "28px",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-xl-mobile": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-lg-mobile": [
+            "22px",
+            {
+              "lineHeight": "28px",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-lg": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-xl": [
+            "36px",
+            {
+              "lineHeight": "44px",
+              "fontWeight": "700"
+            }
+          ],
+          "body-lg": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "400"
+            }
+          ],
+          "body-sm": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "fontWeight": "400"
+            }
+          ],
+          "currency-display": [
+            "32px",
+            {
+              "lineHeight": "40px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ],
+          "label-sm": [
+            "11px",
+            {
+              "lineHeight": "14px",
+              "letterSpacing": "0.04em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-sm": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "600"
+            }
+          ],
+          "body-md": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "400"
+            }
+          ],
+          "label-md": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "fontWeight": "500"
+            }
+          ],
+          "label-lg": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "500"
+            }
+          ],
+          "currency-tabular": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "500"
+            }
+          ]
+        }
+      },
+    },
+  }</script><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/></head><body class="bg-background font-body-md text-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 px-space-md flex items-center justify-between bg-surface-container-low"><div class="flex items-center gap-space-xs"><img alt="Bharat Gateway Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VWvfzN_U2Btc9LZEDi9gnHE5P8mq4Mvb39vp7KCCUkKNKyuVIHgV1S6c1HYdU8daQDU8tKEND3YYqvFiW5marnRa3Ul0_cGzPl6akyXyNroxa3sLEYB3ih5-Kfg4ZTaN7OaWegekSKEDKD-lYONiq_dLyD9y-BySfehprojt8U726695JPdG4o9NQKjib5fUeSv1rscDx46vv5t8uShcIugxDgiJ7fKRDluBUeKQ0_g6ETA2bSTNdRZN7J"/><span class="font-headline-sm text-headline-sm text-primary tracking-tight">BharatGateway</span></div><span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded-lg bg-surface-container-high text-on-surface-variant font-medium">v2.4 Self-Hosted</span></div><div class="px-space-md pt-space-md"><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline px-space-xs mb-space-xs block">Main</span><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-semibold"><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-lg">dashboard</span><span class="font-label-lg text-label-lg">Dashboard</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="payments" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-lg">payments</span><span class="font-label-lg text-label-lg">Payments</span></div><span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-surface-container text-primary font-bold">1,280</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="observers-heartbeats" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-lg">vital_signs</span><span class="font-label-lg text-label-lg">Observers / Heartbeats</span></div><span class="flex h-2 w-2 relative"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span></span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="customers" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-lg">group</span><span class="font-label-lg text-label-lg">Customers</span></div></a></nav></div><div class="px-space-md pt-space-lg"><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline px-space-xs mb-space-xs block">Configuration</span><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-semibold"><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="branding-settings" href="#"><span class="material-symbols-outlined text-lg">palette</span><span class="font-label-lg text-label-lg">Branding Settings</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="webhooks-api" href="#"><span class="material-symbols-outlined text-lg">webhook</span><span class="font-label-lg text-label-lg">Webhooks &amp; API</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="system-logs" href="#"><span class="material-symbols-outlined text-lg">terminal</span><span class="font-label-lg text-label-lg">System Logs</span></a></nav></div></div><div class="p-space-md bg-surface-container-low m-space-sm rounded-xl"><div class="flex items-center justify-between mb-space-xs"><div class="flex items-center gap-space-xs"><span class="h-2 w-2 rounded-full bg-secondary inline-block animate-pulse"></span><span class="font-label-sm text-label-sm font-semibold text-on-surface">UPI Listener Engine</span></div><span class="font-label-sm text-label-sm text-secondary font-bold">Active</span></div><div class="w-full bg-surface-container rounded-full h-1.5 mb-space-xs"><div class="bg-secondary h-1.5 rounded-full w-2/5"></div></div><div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm"><span>Mem: 248MB | CPU: 4%</span><span>v2.4.1 (Stable)</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl z-40 flex items-center justify-between px-gutter shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-md flex-1 max-w-xl"><div class="flex items-center gap-space-xs px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed"><span class="h-2 w-2 rounded-full bg-secondary inline-block"></span><span class="font-label-sm text-label-sm font-semibold">Production</span></div><div class="relative flex-1"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg">search</span><input class="w-full bg-surface-container-low text-on-surface placeholder:text-outline pl-9 pr-8 py-1.5 rounded-lg font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Quick UTR / Order ID lookup..." type="text"/><kbd class="absolute right-2.5 top-1/2 -translate-y-1/2 font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono">/</kbd></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs"><button class="flex items-center gap-space-xs px-space-sm py-1.5 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" type="button"><span class="material-symbols-outlined text-base">send</span><span>Test Webhook</span></button><button class="flex items-center gap-space-xs px-space-sm py-1.5 rounded-lg bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md transition-colors" type="button"><span class="material-symbols-outlined text-base">add</span><span>Create Payment Link</span></button></div><div class="relative flex items-center justify-center"><button class="text-on-surface-variant hover:text-on-surface transition-colors p-1.5 rounded-lg hover:bg-surface-container-low" type="button"><span class="material-symbols-outlined text-xl">notifications</span></button><span class="absolute top-1 right-1 h-2 w-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Kisan Agro Tech Pvt Ltd</span><span class="font-label-sm text-label-sm text-outline font-mono leading-tight">MID_884920</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-surface-container-high" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdx3kSektrAQovYY6vdQ9iHD_ilcYj2nD3BBPgFfKnH7xcUrvH5nk4J63QqHagj84hd2WbpbvxClocZQRUF1EKPMHH0DQiKzgLhZaDbLq_tf38ZmUkNegT5d59Y4RjlqaSm4lzNvgxnR03vxeokRN7CWvgYHgd6UDvFnb5CbL2v9DTZwa2KgaGKaz9fYSgUIqFYKxW13ADPyy0zqXvo15SvFvPUXbi3kJRFg2lRhhPUep222gIEqKaxQ"/></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="px-space-md py-space-lg flex flex-col gap-space-lg">
+<!-- Top Bar: Breadcrumb + Header + Quick Global Actions -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<span>System Architecture</span>
+<span class="text-outline">/</span>
+<span class="text-primary font-semibold">Observers &amp; Telemetry</span>
+</div>
+<div class="flex items-center flex-wrap gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Observer Daemons &amp; Heartbeats</h1>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm font-semibold">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+</span>
+            System Nominal • All 3 Channels Active
+          </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+          Real-time background listener telemetry, dedicated hardware vitals, and bank credit parsing synchronization across self-hosted capture nodes.
+        </p>
+</div>
+<div class="flex items-center flex-wrap gap-space-xs">
+<button class="flex items-center gap-space-xs px-3.5 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors shadow-sm" id="btnDiagnostic">
+<span class="material-symbols-outlined text-lg">medical_services</span>
+<span>Health Diagnostic</span>
+</button>
+<button class="flex items-center gap-space-xs px-3.5 py-2 rounded-lg bg-surface-container-highest hover:bg-surface-variant text-on-surface font-label-md text-label-md transition-colors shadow-sm" id="btnForceSync">
+<span class="material-symbols-outlined text-lg animate-spin-hover">sync</span>
+<span>Force Sync All Daemons</span>
+</button>
+<button class="flex items-center gap-space-xs px-4 py-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md transition-all shadow-md">
+<span class="material-symbols-outlined text-lg">qr_code_scanner</span>
+<span>Pair New Android Device</span>
+</button>
+</div>
+</div>
+<!-- 4 High-Density Telemetry Metrics -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between gap-space-sm relative overflow-hidden group">
+<div class="flex items-start justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Daemon Consensus</span>
+<span class="px-2 py-0.5 rounded bg-secondary-container/40 text-secondary font-label-sm text-label-sm font-semibold">100% Operational</span>
+</div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-currency-display text-currency-display text-primary">3 of 3</span>
+<span class="font-label-md text-label-md text-on-surface-variant font-normal">Channels Live</span>
+</div>
+<div class="pt-space-xs flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm bg-surface-container-low px-2.5 py-1.5 rounded-lg">
+<span class="flex items-center gap-1">
+<span class="h-1.5 w-1.5 rounded-full bg-secondary inline-block"></span> 1 Phone
+          </span>
+<span class="text-outline">•</span>
+<span class="flex items-center gap-1">
+<span class="h-1.5 w-1.5 rounded-full bg-secondary inline-block"></span> 1 Gmail
+          </span>
+<span class="text-outline">•</span>
+<span class="flex items-center gap-1">
+<span class="h-1.5 w-1.5 rounded-full bg-secondary inline-block"></span> 1 SMS Modem
+          </span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between gap-space-sm relative overflow-hidden group">
+<div class="flex items-start justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Avg Match Latency</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span>⚡ 0.3s faster</span>
+</span>
+</div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-currency-display text-currency-display text-primary">1.42s</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">vs 1.72s 7d avg</span>
+</div>
+<div class="pt-space-xs flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm bg-surface-container-low px-2.5 py-1.5 rounded-lg">
+<span>Fastest: <strong class="text-on-surface">890ms</strong> (Android Push)</span>
+<span class="text-outline font-mono">P95: 1.88s</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between gap-space-sm relative overflow-hidden group">
+<div class="flex items-start justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Heartbeat Reliability</span>
+<span class="px-2 py-0.5 rounded bg-secondary-container/40 text-secondary font-label-sm text-label-sm font-semibold">0 Drops</span>
+</div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-currency-display text-currency-display text-primary">99.98%</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Last 24h</span>
+</div>
+<div class="pt-space-xs flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm bg-surface-container-low px-2.5 py-1.5 rounded-lg">
+<span>Cadence: <strong class="text-on-surface">Every 5.0s</strong></span>
+<span class="text-secondary font-medium flex items-center gap-1">
+<span class="h-1.5 w-1.5 rounded-full bg-secondary animate-pulse inline-block"></span> Next: 3s
+          </span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between gap-space-sm relative overflow-hidden group">
+<div class="flex items-start justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Today's Interceptions</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-primary font-label-sm text-label-sm font-semibold">100% Regex Accuracy</span>
+</div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-currency-display text-currency-display text-primary">342</span>
+<span class="font-label-md text-label-md text-on-surface-variant font-normal">Push Credits</span>
+</div>
+<div class="pt-space-xs flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm bg-surface-container-low px-2.5 py-1.5 rounded-lg">
+<span class="truncate">Value: <strong class="text-on-surface font-currency-tabular">₹4,82,950.00</strong></span>
+<span class="text-secondary font-medium font-label-sm">0 Discrepancies</span>
+</div>
+</div>
+</div>
+<!-- Active Observer Nodes Detailed Cards -->
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-xl">sensors</span>
+<h2 class="font-headline-md text-headline-md text-primary">Active Listener Channels</h2>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold">Multi-Rail Consensus</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Active Failover Engine: Primary -&gt; Webhook -&gt; SMS</span>
+</div>
+<!-- Channel 1: Android Notification Listener (Primary) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden transition-all hover:shadow-md">
+<!-- Node Header Bar -->
+<div class="px-space-md py-3.5 bg-surface-container-low flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-xl">smartphone</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface">Android Notification Listener</span>
+<span class="px-2 py-0.5 rounded bg-primary text-on-primary font-label-sm text-label-sm font-semibold tracking-wide">PRIMARY</span>
+<span class="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="h-1.5 w-1.5 rounded-full bg-secondary"></span> 0.8s - 1.5s
+                </span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">DEVICE: Samsung Galaxy M14 5G (SM-M146B) • Dedicated Gateway Rig #2</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm font-bold">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+</span>
+              ONLINE
+            </span>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">wifi_tethering</span>
+<span>Ping Node</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">terminal</span>
+<span>Logcat</span>
+</button>
+</div>
+</div>
+<!-- Node Body Telemetry Grid -->
+<div class="p-space-md grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<!-- Hardware Vitals Left (7 Cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Daemon Runtime &amp; Hardware Telemetry</span>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-xs">
+<div class="p-space-sm bg-surface-container-low rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Battery Status</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-headline-sm text-headline-sm text-primary">89%</span>
+<span class="text-secondary font-label-sm text-label-sm flex items-center">
+<span class="material-symbols-outlined text-xs">bolt</span>AC
+                  </span>
+</div>
+<span class="font-body-sm text-body-sm text-outline mt-0.5">31.4°C Safe Thermal</span>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Wi-Fi &amp; Radio</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-headline-sm text-headline-sm text-primary">-52 dBm</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 truncate">Office-5GHz • Airtel 5G</span>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Heartbeat Ping</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-headline-sm text-headline-sm text-secondary">2.1s ago</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline mt-0.5">Interval: 5s ±0.1s</span>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Foreground Daemon</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-headline-sm text-headline-sm text-secondary">ACTIVE</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline mt-0.5">v2.4.1 (Build 142)</span>
+</div>
+</div>
+<!-- Permission & Whitelist Status Strip -->
+<div class="p-space-sm bg-surface rounded-lg flex flex-wrap items-center justify-between gap-space-xs text-body-sm font-body-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-base">verified</span>
+<span>NotificationListenerService: <strong>Bound &amp; Active</strong></span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-base">battery_charging_full</span>
+<span>Doze Mode: <strong>Ignored (Unrestricted Whitelist)</strong></span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-base">restart_alt</span>
+<span>Watchdog Auto-Restart: <strong>Enabled</strong></span>
+</div>
+</div>
+</div>
+<!-- Monitored Banking Packages Right (5 Cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Active Push Parser Hooks</span>
+<div class="flex flex-col gap-1.5">
+<!-- Bank 1 -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-primary text-on-primary flex items-center justify-center font-bold text-xs">IC</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">ICICI iMobile Pay</span>
+<span class="font-label-sm text-label-sm text-outline font-mono">com.csam.icici.bank.imobile</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="px-1.5 py-0.5 rounded bg-secondary-container/30 text-secondary font-label-sm text-label-sm font-semibold">Hook Active</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Parsed 4m ago</span>
+</div>
+</div>
+<!-- Bank 2 -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-primary-container text-on-primary flex items-center justify-center font-bold text-xs">HD</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">HDFC Bank Mobile</span>
+<span class="font-label-sm text-label-sm text-outline font-mono">com.snapwork.hdfc</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="px-1.5 py-0.5 rounded bg-secondary-container/30 text-secondary font-label-sm text-label-sm font-semibold">Hook Active</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Parsed 18m ago</span>
+</div>
+</div>
+<!-- Bank 3 -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-on-primary-fixed-variant text-on-primary flex items-center justify-center font-bold text-xs">SB</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">SBI YONO / Corporate</span>
+<span class="font-label-sm text-label-sm text-outline font-mono">com.sbi.lotusintouch</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="px-1.5 py-0.5 rounded bg-secondary-container/30 text-secondary font-label-sm text-label-sm font-semibold">Hook Active</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Parsed 1h ago</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Channel 2: Gmail UPI Webhook Sync (Secondary Corroborator) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden transition-all hover:shadow-md">
+<!-- Node Header Bar -->
+<div class="px-space-md py-3.5 bg-surface-container-low flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-on-tertiary-container text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-xl">mail</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface">Gmail Cloud Pub/Sub Webhook</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary font-label-sm text-label-sm font-semibold tracking-wide">SECONDARY CORROBORATOR</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-medium">Consensus Verifier (~2.1s)</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">TARGET: finance-ops@kisanagro.com via Google Cloud Pub/Sub v1</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm font-bold">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+</span>
+              ONLINE
+            </span>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">send</span>
+<span>Test Pub/Sub</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">key</span>
+<span>Token Vitals</span>
+</button>
+</div>
+</div>
+<!-- Node Body Telemetry Grid -->
+<div class="p-space-md grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<div class="lg:col-span-7 flex flex-col gap-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Pub/Sub Subscription &amp; Token Health</span>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-xs">
+<div class="p-space-sm bg-surface-container-low rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Queue Depth</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-headline-sm text-headline-sm text-primary">0 msgs</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary mt-0.5 font-medium">Real-time Drain</span>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Ingest Latency</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-headline-sm text-headline-sm text-primary">2.1s</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline mt-0.5">From SMTP timestamp</span>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">OAuth Token</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-headline-sm text-headline-sm text-secondary">VALID</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline mt-0.5">Expires in 28 days</span>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Last Processed</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-headline-sm text-headline-sm text-primary">4m ago</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline mt-0.5 font-mono truncate">msg_icici_98242</span>
+</div>
+</div>
+<!-- Encryption & Scope -->
+<div class="p-space-sm bg-surface rounded-lg flex flex-col gap-1 text-body-sm font-body-sm text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">lock</span>
+<span>TLS 1.3 End-to-End Encrypted Handshake • Google Cloud Pub/Sub Push Endpoint</span>
+</div>
+<div class="flex items-center gap-2 font-mono text-label-sm text-outline break-all">
+<span>Scope: https://www.googleapis.com/auth/gmail.readonly [Filter: from:(alerts@icicibank.com OR alerts@hdfcbank.net)]</span>
+</div>
+</div>
+</div>
+<!-- Matching Corroboration Stats Right -->
+<div class="lg:col-span-5 flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Dual-Consensus Performance (24 Hours)</span>
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col gap-2">
+<div class="flex items-center justify-between text-label-sm">
+<span class="text-on-surface-variant">Dual-Matched with Android Push:</span>
+<span class="font-bold text-on-surface">340 / 342 (99.4%)</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2">
+<div class="bg-secondary h-2 rounded-full w-[99.4%]"></div>
+</div>
+<div class="flex items-center justify-between text-label-sm text-outline">
+<span>Independent Webhook Trigger: 2 (Phone Delay)</span>
+<span class="text-secondary font-medium">Consensus: Validated</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-lg">filter_alt</span>
+<span class="font-label-sm text-label-sm text-on-surface">MIME Parser Sandbox: Strict Text/Plain</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Active Isolation</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Channel 3: SIM SMS Gateway Listener (Tertiary Fallback) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden transition-all hover:shadow-md">
+<!-- Node Header Bar -->
+<div class="px-space-md py-3.5 bg-surface-container-low flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-primary text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-xl">sim_card</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface">Cellular Hardware SMS Gateway</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold tracking-wide">TERTIARY FALLBACK</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-medium">Air-Gapped GSM Modem</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">HARDWARE: SIM800L v2 Quad-Band Module on /dev/ttyUSB0 (Baud 115200)</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm font-bold">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+</span>
+              ONLINE
+            </span>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">settings_input_component</span>
+<span>AT Test</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">replay</span>
+<span>Reset UART</span>
+</button>
+</div>
+</div>
+<!-- Node Body Telemetry Grid -->
+<div class="p-space-md grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<div class="lg:col-span-7 flex flex-col gap-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Cellular Signal &amp; Serial Telemetry</span>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-xs">
+<div class="p-space-sm bg-surface-container-low rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Signal Quality</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-headline-sm text-headline-sm text-secondary">CSQ 24/31</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline mt-0.5">-71 dBm (Excellent)</span>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Carrier &amp; SIM</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-headline-sm text-headline-sm text-primary">Jio 4G</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline mt-0.5 font-mono">+91 98765 XXXXX</span>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Buffer Queue</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-headline-sm text-headline-sm text-primary">0 Unread</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary mt-0.5 font-medium">Memory 100% Free</span>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Last SMS Ingest</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-headline-sm text-headline-sm text-primary">14m ago</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline mt-0.5">Bank Sender: VM-HDFCBK</span>
+</div>
+</div>
+<!-- Serial Connection details -->
+<div class="p-space-sm bg-surface rounded-lg flex flex-wrap items-center justify-between gap-space-xs text-body-sm font-body-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5 font-mono text-label-sm">
+<span class="material-symbols-outlined text-primary text-base">usb</span>
+<span>Port: /dev/ttyUSB0 (FTDI FT232R USB UART)</span>
+</div>
+<div class="flex items-center gap-1.5 text-label-sm">
+<span>RTS/CTS Flow Control: <strong>Enabled</strong></span>
+</div>
+<div class="flex items-center gap-1.5 text-label-sm">
+<span>Auto-PDU Decoding: <strong>UTF-8 Compliant</strong></span>
+</div>
+</div>
+</div>
+<!-- Regex Parser status -->
+<div class="lg:col-span-5 flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Offline Hardware Fallback State</span>
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col gap-2">
+<div class="flex items-center justify-between text-label-sm">
+<span class="text-on-surface-variant font-medium">Direct Carrier Line Continuity</span>
+<span class="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-bold text-xs">READY</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                Should local internet or cloud connectivity fail, incoming cellular bank credit SMS will continue to trigger order reconciliation on the internal host network directly.
+              </p>
+<div class="flex items-center justify-between text-label-sm pt-1">
+<span class="text-outline">GSM Firmware: 1418B04SIM800L24</span>
+<span class="text-primary font-mono text-xs">Auto-Archive: OK</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Split Section: Real-time Heartbeat Stream & Failover Configuration -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<!-- Left Column (7 Cols): Live Heartbeat Stream & Event Audit Log -->
+<div class="lg:col-span-7 bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-xl">network_check</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Live Pulse Stream &amp; Audit Log</h3>
+</div>
+<div class="flex items-center gap-2">
+<span class="flex items-center gap-1 text-label-sm text-on-surface-variant font-mono">
+<span class="h-2 w-2 rounded-full bg-secondary inline-block animate-ping"></span> Live Tail
+              </span>
+<button class="p-1 rounded hover:bg-surface-container text-outline hover:text-on-surface transition-colors" id="btnClearLog" title="Clear View">
+<span class="material-symbols-outlined text-base">delete_sweep</span>
+</button>
+</div>
+</div>
+<!-- Event Log Rows -->
+<div class="flex flex-col gap-1.5 font-mono text-body-sm overflow-y-auto max-h-96 pr-1" id="logContainer">
+<!-- Log Entry 1 -->
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-start gap-space-sm hover:bg-surface-container transition-colors">
+<span class="text-outline font-label-sm text-label-sm whitespace-nowrap pt-0.5">18:44:02</span>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="px-1.5 py-0.2 rounded bg-primary-fixed-dim text-on-primary-fixed font-label-sm text-label-sm font-semibold">ANDROID_DAEMON</span>
+<span class="text-secondary font-semibold text-xs">Heartbeat OK</span>
+<span class="text-outline text-xs">RTT: 18ms</span>
+</div>
+<p class="text-on-surface-variant text-xs mt-0.5">Battery 89% (AC) • Free RAM: 42MB • Doze Whitelist Confirmed</p>
+</div>
+<span class="material-symbols-outlined text-secondary text-base">check_circle</span>
+</div>
+<!-- Log Entry 2 -->
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-start gap-space-sm hover:bg-surface-container transition-colors">
+<span class="text-outline font-label-sm text-label-sm whitespace-nowrap pt-0.5">18:43:57</span>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="px-1.5 py-0.2 rounded bg-primary-fixed-dim text-on-primary-fixed font-label-sm text-label-sm font-semibold">ANDROID_DAEMON</span>
+<span class="text-secondary font-semibold text-xs">Heartbeat OK</span>
+<span class="text-outline text-xs">RTT: 22ms</span>
+</div>
+<p class="text-on-surface-variant text-xs mt-0.5">Wi-Fi RSSI: -52 dBm • Channel 44 (5GHz)</p>
+</div>
+<span class="material-symbols-outlined text-secondary text-base">check_circle</span>
+</div>
+<!-- Log Entry 3: Match Event -->
+<div class="p-2.5 rounded-lg bg-secondary-container/20 flex items-start gap-space-sm">
+<span class="text-secondary font-label-sm text-label-sm whitespace-nowrap pt-0.5 font-bold">18:43:10</span>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="px-1.5 py-0.2 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold">MATCH_INTERCEPT</span>
+<span class="text-secondary font-bold text-xs">₹3,499.00 Credited</span>
+</div>
+<p class="text-on-surface text-xs mt-0.5">
+                  Notification intercepted from ICICI iMobile -&gt; Matched Order <strong class="text-primary">ORD-98242</strong> (UTR: <span class="bg-surface-container px-1 py-0.5 rounded text-primary">429812984920</span>) in <strong>910ms</strong>.
+                </p>
+</div>
+<span class="material-symbols-outlined text-secondary text-base">task_alt</span>
+</div>
+<!-- Log Entry 4: Corroboration -->
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-start gap-space-sm hover:bg-surface-container transition-colors">
+<span class="text-outline font-label-sm text-label-sm whitespace-nowrap pt-0.5">18:43:11</span>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="px-1.5 py-0.2 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">GMAIL_HOOK</span>
+<span class="text-primary font-semibold text-xs">Corroboration Verified</span>
+<span class="text-outline text-xs font-mono">Delta: +1.1s</span>
+</div>
+<p class="text-on-surface-variant text-xs mt-0.5">
+                  Pub/Sub push event received for UTR 429812984920. Dual-channel consensus achieved (Score: 1.00).
+                </p>
+</div>
+<span class="material-symbols-outlined text-primary text-base">done_all</span>
+</div>
+<!-- Log Entry 5 -->
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-start gap-space-sm hover:bg-surface-container transition-colors">
+<span class="text-outline font-label-sm text-label-sm whitespace-nowrap pt-0.5">18:42:00</span>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="px-1.5 py-0.2 rounded bg-surface-variant text-on-primary-fixed-variant font-label-sm text-label-sm font-semibold">GSM_MODEM</span>
+<span class="text-secondary font-semibold text-xs">Modem Heartbeat OK</span>
+</div>
+<p class="text-on-surface-variant text-xs mt-0.5">Signal CSQ 24/31 • VoLTE Registered • SMS Buffer: 0/50</p>
+</div>
+<span class="material-symbols-outlined text-secondary text-base">check_circle</span>
+</div>
+</div>
+</div>
+<div class="pt-space-sm mt-space-sm flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm bg-surface-container-low px-3 py-2 rounded-lg">
+<span>Polling stream via Local WebSocket: <strong class="text-on-surface font-mono">ws://127.0.0.1:8088/pulse</strong></span>
+<span class="text-secondary font-medium">Socket Connected</span>
+</div>
+</div>
+<!-- Right Column (5 Cols): Self-Hosted Failover & Consensus Configuration -->
+<div class="lg:col-span-5 bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-xl">tune</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Consensus &amp; Failover Policy</h3>
+</div>
+<button class="text-primary hover:text-primary-container font-label-sm text-label-sm font-semibold">Edit Rules</button>
+</div>
+<!-- Policy Settings List -->
+<div class="flex flex-col gap-space-xs">
+<!-- Rule 1 -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Match Settlement Policy</span>
+<span class="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">Zero-Wait Trigger</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Instant webhook dispatch on Primary Android Push. Corroborates with Gmail and SMS asynchronously for multi-entry audit trails.
+              </p>
+</div>
+<!-- Rule 2 -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Auto-Promotion Failover</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">&gt; 3 Missed Pings (15s)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                If Android listener drops 3 consecutive cycles, Gmail Cloud Pub/Sub instantly escalates to primary without gateway downtime.
+              </p>
+</div>
+<!-- Rule 3 -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface">NPCI Regex Engine</span>
+<span class="font-mono text-label-sm text-primary font-semibold">v4.8 (Oct 2024 Release)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Contains active patterns for 48 Indian scheduled commercial banks, Unified Payment Interface handles, and IMPS remarks.
+              </p>
+</div>
+<!-- Rule 4 -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Emergency Outage Alerts</span>
+<span class="px-2 py-0.5 rounded bg-secondary-container/30 text-secondary font-label-sm text-label-sm font-semibold">Telegram &amp; WhatsApp Ops</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Dispatches urgent siren alert if all 3 observer channels remain silent for &gt; 30 seconds during active business hours.
+              </p>
+</div>
+</div>
+</div>
+<!-- Coordinator System Resources -->
+<div class="p-space-sm bg-surface rounded-lg flex flex-col gap-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Local Host Process Resources</span>
+<div class="grid grid-cols-2 gap-2 text-label-sm text-on-surface-variant font-mono">
+<div class="p-2 bg-surface-container-low rounded">
+<span class="text-outline block text-xs">Daemon Daemon PID:</span>
+<span class="text-on-surface font-semibold">4192 (0.4% CPU • 48 MB RAM)</span>
+</div>
+<div class="p-2 bg-surface-container-low rounded">
+<span class="text-outline block text-xs">Audit SQLite DB:</span>
+<span class="text-on-surface font-semibold">14.2 MB / 500 MB (Vacuum weekly)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Dynamic Real-time pulse simulator for the BharatGateway Observer Screen
+  (function() {
+    // Highlight sidebar active tab seamlessly
+    try {
+      const navLinks = document.querySelectorAll('aside nav a');
+      navLinks.forEach(link => {
+        if (link.getAttribute('data-path') === 'observers-heartbeats') {
+          link.classList.remove('text-on-surface-variant');
+          link.classList.add('bg-primary-container', 'text-on-primary', 'font-semibold');
+        }
+      });
+    } catch(e) {
+      console.warn('Navigation active state sync handled:', e);
+    }
+
+    // Force Sync button feedback
+    const btnSync = document.getElementById('btnForceSync');
+    if (btnSync) {
+      btnSync.addEventListener('click', function() {
+        const icon = this.querySelector('.material-symbols-outlined');
+        if (icon) icon.classList.add('animate-spin');
+        const originalText = this.querySelector('span:last-child').textContent;
+        this.querySelector('span:last-child').textContent = 'Pinging Daemons...';
+        
+        setTimeout(() => {
+          if (icon) icon.classList.remove('animate-spin');
+          this.querySelector('span:last-child').textContent = 'All Nodes In-Sync';
+          setTimeout(() => {
+            this.querySelector('span:last-child').textContent = originalText;
+          }, 2000);
+        }, 1200);
+      });
+    }
+
+    // Diagnostic trigger
+    const btnDiag = document.getElementById('btnDiagnostic');
+    if (btnDiag) {
+      btnDiag.addEventListener('click', function() {
+        alert('All observer telemetry channels are nominal:\\n- Android Daemon: 100% healthy\\n- Gmail Pub/Sub: Zero lag\\n- GSM Serial: CSQ 24/31');
+      });
+    }
+
+    // Log Clear
+    const btnClear = document.getElementById('btnClearLog');
+    const logContainer = document.getElementById('logContainer');
+    if (btnClear && logContainer) {
+      btnClear.addEventListener('click', function() {
+        logContainer.innerHTML = '<div class="p-2 text-center text-outline text-xs">Event audit log view refreshed. Listening for next heartbeat...</div>';
+      });
+    }
+  })();
+</script></main></div></body></html>
